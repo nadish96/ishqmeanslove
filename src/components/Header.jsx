@@ -27,7 +27,7 @@ const Header = () => {
         </a>
 
         {/* Center: Site title */}
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-4xl font-serif font-bold tracking-wide uppercase text-[#1e1e1e]">
+        <h1 className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-serif font-bold tracking-wide uppercase text-[#1e1e1e]">
           Nadish Sood
         </h1>
 
