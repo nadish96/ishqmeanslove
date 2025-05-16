@@ -3,7 +3,7 @@ import PageWrapper from "../components/PageWrapper";
 const narrativeSections = [
   {
     title: "IT'S YOUR DAY",
-    image: "/images/photo1.jpg",
+    image: "/images/first.jpg",
     text: `The best photos happen when you forget the camera is there.
 
 I work quietly, intuitively — like a well-dressed ninja with a camera. You do your thing: laugh too loud, tear up, dance badly. I’ll be there in the background, catching it all — the real, the raw, and the ridiculous.
@@ -12,7 +12,7 @@ No stiff poses, no cheesy instructions. Just honest moments, timeless photos.`,
   },
   {
     title: "Don’t Worry, I Got You",
-    image: "/images/photo2.jpg",
+    image: "/images/second.jpg",
     text: `Yes — when it’s time for portraits or family photos, I’ll step in. I won’t leave you standing around like Sims waiting for direction. I’ll tell you where to put your hands, who to look at, and when to fix your cousin’s collar. We’ll keep it relaxed, fast, and painless.`,
   },
   {
@@ -34,16 +34,16 @@ const Weddings = () => {
         <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden mb-24">
           {/* Background Image */}
           <img
-            src="/images/photo1.jpg"
+            src="/images/hero.jpg"
             alt="Intro"
             className="w-full h-full object-cover"
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 bg-black/10 z-10" />
 
           {/* Text */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
+          <div className="absolute inset-0 flex flex-col items-center justify-start text-center z-20 px-4 pt-[25vh]">
             <h1 className="text-5xl sm:text-6xl font-serif font-bold text-white uppercase">
               For people in love
             </h1>
@@ -77,6 +77,20 @@ const Weddings = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Photo Grid */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {Array.from({ length: 33 }).map((_, index) => (
+              <img
+                key={index}
+                src={`/images/grid/image${index + 1}.jpg`}
+                alt={`Grid photo ${index + 1}`}
+                className="w-full h-auto object-cover rounded shadow-sm hover:scale-105 transition-transform duration-300"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </PageWrapper>

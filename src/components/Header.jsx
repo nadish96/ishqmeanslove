@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const navLinks = [
   { label: "Weddings", path: "/weddings" },
-  { label: "Commercial", path: "/commercial" },
-  { label: "Personal", path: "/personal" },
-  { label: "About", path: "/about" },
+  //   { label: "Commercial", path: "/commercial" },
+  //   { label: "Personal", path: "/personal" },
+  //   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -17,7 +17,14 @@ const Header = () => {
       {/* Top Bar */}
       <div className="relative py-4 px-6 pb-8 flex items-center justify-between">
         {/* Left: Social links */}
-        <div className="text-sm text-[#8c735b]">IG / FB</div>
+        <a
+          href="https://www.instagram.com/nadishsood" // replace with your real IG handle
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-[#8c735b] hover:text-[#1e1e1e] transition-colors"
+        >
+          Instagram
+        </a>
 
         {/* Center: Site title */}
         <h1 className="absolute left-1/2 -translate-x-1/2 text-4xl font-serif font-bold tracking-wide uppercase text-[#1e1e1e]">
