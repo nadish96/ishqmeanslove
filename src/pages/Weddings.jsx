@@ -2,27 +2,27 @@ import PageWrapper from "../components/PageWrapper";
 
 const narrativeSections = [
   {
-    title: "TRUST",
+    title: "IT'S YOUR DAY",
     image: "/images/photo1.jpg",
-    text: `You’ll know in the first few moments. When working with you, I balance two intentions: 
-first creating images which need no explanation, where the story, moment, and emotion is clear and powerful. 
-Second is creating photos with a mystery behind them, where the circumstances aren’t obvious and your imagination is left to fill in the story.`,
-  },
-  {
-    title: "INSPIRATION",
-    image: "/images/photo2.jpg",
-    text: `Inspired by, and created for, my clients. I strive to make completely original wedding photographs 
-motivated by who you are together and as individuals. Of course, weddings are about more than just creative photos of two people, 
-and I can share full wedding galleries upon inquiry.`,
-  },
-  {
-    title: "BEING PHOTOGRAPHED",
-    image: "/images/photo3.jpg",
-    text: `Spoiler alert: it’s not like being photographed at all. I work in the background, like a ninja in sensible shoes. 
-No cheesy direction, no grand productions, and absolutely no one shouting “SAY CHEESE!” Unless the buffet is open.
+    text: `The best photos happen when you forget the camera is there.
 
-You’ll spend your wedding day doing the things that matter—hugging your people, laughing too loudly, and wondering where the time went. 
-Meanwhile, I’ll be quietly capturing the magic (and the occasional mishap) as it unfolds.`,
+I work quietly, intuitively — like a well-dressed ninja with a camera. You do your thing: laugh too loud, tear up, dance badly. I’ll be there in the background, catching it all — the real, the raw, and the ridiculous.
+
+No stiff poses, no cheesy instructions. Just honest moments, timeless photos.`,
+  },
+  {
+    title: "Don’t Worry, I Got You",
+    image: "/images/photo2.jpg",
+    text: `Yes — when it’s time for portraits or family photos, I’ll step in. I won’t leave you standing around like Sims waiting for direction. I’ll tell you where to put your hands, who to look at, and when to fix your cousin’s collar. We’ll keep it relaxed, fast, and painless.`,
+  },
+  {
+    title: "WHAT YOU'LL REMEMBER",
+    image: "/images/photo3.jpg",
+    text: `You won’t remember every flower arrangement or appetizer — but you’ll remember how it felt.
+
+That deep breath before walking in. The look your partner gave you when no one else was watching. Your uncle losing it on the dance floor. That’s what I look for — the stuff that lasts.
+
+Years from now, I want your photos to feel like a memory — not a photoshoot.`,
   },
 ];
 
@@ -31,7 +31,7 @@ const Weddings = () => {
     <PageWrapper>
       <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
         {/* Top Hero Section: full-width background image with overlay text */}
-        <div className="relative w-full h-[80vh] overflow-hidden mb-24">
+        <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden mb-24">
           {/* Background Image */}
           <img
             src="/images/photo1.jpg"
@@ -58,8 +58,8 @@ const Weddings = () => {
           {narrativeSections.map((section, index) => (
             <div
               key={index}
-              className={`flex flex-col md:flex-row items-center gap-8 ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              className={`flex flex-col lg:flex-row items-center gap-8 ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
               <img
