@@ -7,11 +7,11 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header";
-import Wedding from "./pages/Wedding";
 import Commercial from "./pages/Commercial";
 import Personal from "./pages/Personal";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Weddings from "./pages/Weddings";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -19,8 +19,8 @@ const AppRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Navigate to="/wedding" replace />} />
-        <Route path="/wedding" element={<Wedding />} />
+        <Route path="/" element={<Navigate to="/weddings" replace />} />
+        <Route path="/weddings" element={<Weddings />} />
         <Route path="/commercial" element={<Commercial />} />
         <Route path="/personal" element={<Personal />} />
         <Route path="/about" element={<About />} />

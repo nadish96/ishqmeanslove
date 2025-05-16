@@ -10,9 +10,18 @@ const photos = [
   // Add more or replace with your own image paths
 ];
 
-const Wedding = () => {
+const Weddings = () => {
   return (
     <PageWrapper>
+      <section className="max-w-3xl mx-auto px-4 py-8 text-center">
+        <p className="text-gray-600 mb-2">
+          I’m a wedding photographer based in San Jose, capturing real moments
+          with a documentary approach. My style is warm, candid, and unobtrusive
+          — focused on telling the emotional truth of your day as it unfolds
+          naturally.
+        </p>
+      </section>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
         {photos.map((src, index) => (
           <img
@@ -27,4 +36,4 @@ const Wedding = () => {
   );
 };
 
-export default Wedding;
+export default Weddings;
