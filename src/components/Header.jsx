@@ -13,20 +13,20 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white -b ">
+    <header className="sticky top-0 z-50 bg-[#f9f6f3] text-[#1e1e1e]">
       {/* Top Bar */}
       <div className="relative py-4 px-6 pb-8 flex items-center justify-between">
         {/* Left: Social links */}
-        <div className="text-sm text-gray-500">IG / FB</div>
+        <div className="text-sm text-[#8c735b]">IG / FB</div>
 
         {/* Center: Site title */}
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-4xl font-bold tracking-wide text-gray-800">
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-4xl font-serif font-bold tracking-wide uppercase text-[#1e1e1e]">
           Nadish Sood
         </h1>
 
         {/* Right: Hamburger (mobile only) */}
         <button
-          className="block md:hidden text-gray-600 text-2xl"
+          className="block md:hidden text-[#1e1e1e] text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -47,8 +47,8 @@ const Header = () => {
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>
               isActive
-                ? "text-black font-semibold"
-                : "text-gray-500 hover:text-black"
+                ? "text-[#1e1e1e] font-semibold"
+                : "text-[#8c735b] hover:text-[#1e1e1e]"
             }
           >
             {link.label}
