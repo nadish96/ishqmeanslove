@@ -1,48 +1,43 @@
+import { useEffect, useState } from "react";
 import PageWrapper from "../components/PageWrapper";
 
-const narrativeSections = [
-  {
-    title: "IT'S YOUR DAY",
-    image: "/images/first.jpg",
-    text: `The best photos happen when you forget the camera is there.
+const heroImages = ["/images/hero.jpg"];
 
-I work quietly, intuitively — like a well-dressed ninja with a camera. You do your thing: laugh too loud, tear up, dance badly. I’ll be there in the background, catching it all — the real, the raw, and the ridiculous.
+const curatedHighlights = [
+  "/images/grid/image4.jpg",
+  "/images/grid/image5.jpg",
+  "/images/grid/image6.jpg",
+  "/images/grid/image7.jpg",
+];
 
-No stiff poses, no cheesy instructions. Just honest moments, timeless photos.`,
-  },
-  {
-    title: "Don’t Worry, I Got You",
-    image: "/images/second.jpg",
-    text: `Yes — when it’s time for portraits or family photos, I’ll step in. I won’t leave you standing around like Sims waiting for direction. I’ll tell you where to put your hands, who to look at, and when to fix your cousin’s collar. We’ll keep it relaxed, fast, and painless.`,
-  },
-  {
-    title: "WHAT YOU'LL REMEMBER",
-    image: "/images/photo3.jpg",
-    text: `You won’t remember every flower arrangement or appetizer — but you’ll remember how it felt.
-
-That deep breath before walking in. The look your partner gave you when no one else was watching. Your uncle losing it on the dance floor. That’s what I look for — the stuff that lasts.
-
-Years from now, I want your photos to feel like a memory — not a photoshoot.`,
-  },
+const weddingAlbums = [
+  { title: "Album 1", cover: "/images/grid/image8.jpg" },
+  { title: "Album 2", cover: "/images/grid/image9.jpg" },
+  { title: "Album 3", cover: "/images/grid/image10.jpg" },
+  { title: "Album 4", cover: "/images/grid/image11.jpg" },
 ];
 
 const Weddings = () => {
+  const [currentHero, setCurrentHero] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <PageWrapper>
       <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
-        {/* Top Hero Section: full-width background image with overlay text */}
+        {/* Hero Section with Fading Slideshow */}
         <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden mb-24">
-          {/* Background Image */}
           <img
-            src="/images/hero.jpg"
-            alt="Intro"
-            className="w-full h-full object-cover"
+            src={heroImages[currentHero]}
+            alt="Wedding Hero"
+            className="w-full h-full object-cover transition-opacity duration-1000"
           />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/10 z-10" />
-
-          {/* Text */}
+          <div className="absolute inset-0 bg-black/20 z-10" />
           <div className="absolute inset-0 flex flex-col items-center justify-start text-center z-20 px-4 pt-[25vh]">
             <h1 className="text-5xl sm:text-6xl font-serif font-bold text-white uppercase">
               For people in love
@@ -53,43 +48,67 @@ const Weddings = () => {
           </div>
         </div>
 
-        {/* Narrative Sections */}
-        <div className="space-y-24 px-4 pb-24 max-w-7xl mx-auto">
-          {narrativeSections.map((section, index) => (
-            <div
-              key={index}
-              className={`flex flex-col lg:flex-row items-center gap-8 ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              <img
-                src={section.image}
-                alt={section.title}
-                className="rounded-lg shadow-md object-cover w-full h-auto max-w-2xl"
-              />
-              <div className="max-w-xl text-left">
-                <h2 className="text-2xl font-serif font-semibold uppercase text-[#8c735b] mb-4 tracking-wide">
-                  {section.title}
-                </h2>
-                <p className="text-[#4b4b4b] whitespace-pre-line leading-relaxed font-light">
-                  {section.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Photo Grid */}
+        {/* Curated Highlights Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {Array.from({ length: 33 }).map((_, index) => (
+          <h2 className="text-3xl font-serif font-semibold uppercase text-[#8c735b] mb-4">
+            Curated Highlights
+          </h2>
+          <p className="text-[#4b4b4b] mb-8">
+            A handpicked selection of my favourite wedding photos.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+            {curatedHighlights.map((image, index) => (
               <img
                 key={index}
-                src={`/images/grid/image${index + 1}.jpg`}
-                alt={`Grid photo ${index + 1}`}
-                className="w-full h-auto object-cover rounded shadow-sm hover:scale-105 transition-transform duration-300"
+                src={image}
+                alt={`Highlight ${index + 1}`}
+                className="w-full h-auto object-cover rounded shadow-sm"
               />
             ))}
+          </div>
+          <div className="mt-4">
+            <a
+              href="/weddings/highlights"
+              className="text-[#8c735b] hover:text-[#1e1e1e] underline"
+            >
+              View All Highlights →
+            </a>
+          </div>
+        </div>
+
+        {/* Wedding Albums Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
+          <h2 className="text-3xl font-serif font-semibold uppercase text-[#8c735b] mb-4">
+            Wedding Albums
+          </h2>
+          <p className="text-[#4b4b4b] mb-8">
+            Curated sets from select weddings, telling complete stories.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+            {weddingAlbums.map((album, index) => (
+              <a
+                key={index}
+                href={`/weddings/albums/${album.title
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+                className="block"
+              >
+                <img
+                  src={album.cover}
+                  alt={album.title}
+                  className="w-full h-auto object-cover rounded shadow-sm"
+                />
+                <h3 className="mt-2 text-lg font-serif">{album.title}</h3>
+              </a>
+            ))}
+          </div>
+          <div className="mt-4">
+            <a
+              href="/weddings/albums"
+              className="text-[#8c735b] hover:text-[#1e1e1e] underline"
+            >
+              View All Albums →
+            </a>
           </div>
         </div>
       </div>
