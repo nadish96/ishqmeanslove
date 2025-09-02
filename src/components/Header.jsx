@@ -24,24 +24,65 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-[#f9f6f3] text-[#1e1e1e]">
       {/* Top Bar */}
-      <div className="relative py-4 px-6 pb-8 flex items-center justify-between">
-        {/* Left: Social link */}
-        <a
-          href="https://www.instagram.com/nadishsood"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-[#8c735b] hover:text-[#1e1e1e] transition-colors"
-        >
-          Instagram
-        </a>
-
-        {/* Center: Site title */}
+      <div className="py-4 px-6 pb-8 flex items-center justify-between">
+        {/* Left: Site title */}
         <NavLink 
           to="/"
-          className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-alt-heading font-bold tracking-wide uppercase text-[#1e1e1e] hover:text-[#8c735b] transition-colors"
+          className="whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-alt-heading font-bold tracking-wide uppercase text-[#1e1e1e] hover:text-[#8c735b] transition-colors"
         >
           Nadish Sood
         </NavLink>
+
+        {/* Right: Navigation (desktop) */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <div key={link.label} className="relative">
+              {link.subLinks ? (
+                <>
+                  {/* Parent Link for Desktop */}
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `text-[#8c735b] hover:text-[#1e1e1e] ${
+                        isActive ? "font-semibold text-[#1e1e1e]" : ""
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+
+                  {/* Sublinks */}
+                  <div className="absolute mt-2 shadow-md bg-[#f9f6f3] border rounded p-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    {link.subLinks.map((sub) => (
+                      <NavLink
+                        key={sub.path}
+                        to={sub.path}
+                        className={({ isActive }) =>
+                          isActive
+                            ? "block text-[#1e1e1e] font-semibold"
+                            : "block text-[#8c735b] hover:text-[#1e1e1e]"
+                        }
+                      >
+                        {sub.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-[#1e1e1e] font-semibold"
+                      : "text-[#8c735b] hover:text-[#1e1e1e]"
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              )}
+            </div>
+          ))}
+        </nav>
 
         {/* Right: Hamburger (mobile) */}
         <button
@@ -53,11 +94,11 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Nav Links */}
+      {/* Mobile Navigation */}
       <nav
         className={`${
           menuOpen ? "block" : "hidden"
-        } flex flex-col items-center gap-4 pb-4 md:flex md:flex-row md:justify-center md:gap-6 md:pb-0 border-t md:border-t-0`}
+        } md:hidden flex flex-col items-center gap-4 pb-4 border-t`}
       >
         {navLinks.map((link) => (
           <div key={link.label} className="relative">
@@ -70,28 +111,16 @@ const Header = () => {
                       dropdownOpen === link.label ? null : link.label
                     )
                   }
-                  className="text-[#8c735b] hover:text-[#1e1e1e] md:hidden"
+                  className="text-[#8c735b] hover:text-[#1e1e1e]"
                 >
                   {link.label}
                 </button>
 
-                {/* Parent Link for Desktop */}
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `hidden md:inline text-[#8c735b] hover:text-[#1e1e1e] ${
-                      isActive ? "font-semibold text-[#1e1e1e]" : ""
-                    }`
-                  }
-                >
-                  {link.label}
-                </NavLink>
-
-                {/* Sublinks */}
+                {/* Sublinks for Mobile */}
                 <div
                   className={`${
                     dropdownOpen === link.label ? "block" : "hidden"
-                  } flex flex-col items-center md:absolute md:mt-2 md:shadow-md md:bg-[#f9f6f3] md:border md:rounded md:p-2 md:space-y-1`}
+                  } flex flex-col items-center mt-2 space-y-1`}
                 >
                   {link.subLinks.map((sub) => (
                     <NavLink
