@@ -12,11 +12,11 @@ const curatedHighlights = [
   "/images/grid/image7.jpg",
 ];
 
-const galleries = [
-  { title: "Wedding", slug: "wedding", cover: "/images/grid/image8.jpg" },
-  { title: "Artists", slug: "artists", cover: "/images/grid/image9.jpg" },
-  { title: "Family", slug: "family", cover: "/images/grid/image10.jpg" },
-  { title: "Birthdays", slug: "birthdays", cover: "/images/grid/image11.jpg" },
+const weddingGalleries = [
+  { title: "Sarah & Mike", slug: "sarah-and-mike", cover: "/images/grid/image8.jpg" },
+  { title: "Downtown Loft", slug: "downtown-loft", cover: "/images/grid/image9.jpg" },
+  { title: "Fall Vineyard", slug: "fall-vineyard", cover: "/images/grid/image10.jpg" },
+  { title: "Garden Ceremony", slug: "garden-ceremony", cover: "/images/grid/image11.jpg" },
 ];
 
 const Home = () => {
@@ -43,21 +43,22 @@ const Home = () => {
             {/* Content */}
             <div className="flex flex-col justify-center">
               <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#8c735b] mb-4">
-                Timeless Photos
+                Your Wedding Story
               </h2>
               <h3 className="text-xl text-[#6b6b6b] mb-6 font-alt-body font-light">
-                Let me get you the photos you've always wanted
+                Let me capture the wedding photos you've always dreamed of
               </h3>
               <p className="text-[#4b4b4b] text-lg font-alt-body leading-relaxed mb-8">
-                Photography is more than just capturing moments—it's about creating memories that 
-                last forever. With years of experience and an eye for detail, I specialize in 
-                turning ordinary moments into extraordinary keepsakes that tell your unique story.
+                Your wedding day is one of the most important days of your life. I specialize in 
+                capturing the authentic emotions, intimate moments, and joyful celebrations that 
+                make your love story unique. From getting ready to your first dance, every precious 
+                moment will be beautifully preserved.
               </p>
               <Link
-                to="/portfolio/galleries/wedding"
+                to="/portfolio"
                 className="inline-flex items-center text-[#8c735b] hover:text-[#1e1e1e] font-medium transition-colors"
               >
-                View Wedding Gallery
+                View Wedding Portfolio
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -72,12 +73,13 @@ const Home = () => {
             {/* Content */}
             <div className="flex flex-col justify-center lg:order-1">
               <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#8c735b] mb-8">
-                Your Photographer
+                Your Wedding Photographer
               </h2>
               <p className="text-[#4b4b4b] text-lg font-alt-body leading-relaxed">
-                Whether it's family portraits, artist headshots, or celebration photography, 
-                I create images that reflect your unique personality and story. My goal is to 
-                capture genuine emotions and natural connections in every frame.
+                I understand that your wedding day is filled with countless precious moments that 
+                happen in the blink of an eye. My approach is unobtrusive yet comprehensive, ensuring 
+                I capture both the grand celebrations and quiet intimate moments that make your day 
+                uniquely yours. Every couple has a different story, and I'm here to tell yours beautifully.
               </p>
             </div>
             
@@ -92,14 +94,14 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Curated Highlights Section */}
+        {/* Wedding Portfolio Preview Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
-              Curated Highlights
+              Wedding Portfolio
             </h2>
             <p className="text-[#4b4b4b] text-lg font-alt-body">
-              A handpicked selection of my favourite photos.
+              A preview of my favorite wedding moments and celebrations.
             </p>
           </div>
           <div className="group max-w-2xl mx-auto">
@@ -110,7 +112,7 @@ const Home = () => {
               to="/portfolio"
               className="text-[#8c735b] hover:text-[#1e1e1e] underline"
             >
-              View All Highlights →
+              View Full Portfolio →
             </Link>
           </div>
         </div>
@@ -119,17 +121,17 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
-              Galleries
+              Wedding Galleries
             </h2>
             <p className="text-[#4b4b4b] text-lg font-alt-body">
-              Curated collections from different types of shoots.
+              Recent wedding celebrations I've had the honor to capture.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
-            {galleries.map((gallery, index) => (
+            {weddingGalleries.map((gallery, index) => (
               <Link
                 key={index}
-                to={`/portfolio/galleries/${gallery.slug}`}
+                to={`/portfolio/galleries/weddings/${gallery.slug}`}
                 className="block"
               >
                 <img
@@ -146,7 +148,7 @@ const Home = () => {
               to="/portfolio/galleries"
               className="text-[#8c735b] hover:text-[#1e1e1e] underline"
             >
-              View All Galleries →
+              View All Wedding Galleries →
             </Link>
           </div>
         </div>

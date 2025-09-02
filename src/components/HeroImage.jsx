@@ -13,13 +13,13 @@ const HeroImage = ({ image, alt = "Hero Image" }) => {
       {/* Hero Text Content */}
       <div className="absolute inset-0 flex flex-col items-start justify-start text-left z-20 px-4 pt-[25vh] pl-9">
         <h1 className="text-2xl sm:text-5xl lg:text-6xl font-alt-heading font-bold text-white uppercase">
-          For people in love
+          For couples in love
         </h1>
         <h2 className="text-2xl sm:text-5xl lg:text-6xl font-alt-heading font-bold text-white uppercase">
-          For events of joy
+          For your wedding day
         </h2>
         <p className="mt-4 text-sm sm:text-xl font-alt-body font-light text-white uppercase tracking-wide">
-          I am your photographer
+          I am your wedding photographer
         </p>
       </div>
     </div>

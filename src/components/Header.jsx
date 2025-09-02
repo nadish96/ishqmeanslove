@@ -3,11 +3,11 @@ import { useState } from "react";
 
 const navLinks = [
   { label: "Portfolio", path: "/portfolio" },
+  { label: "Galleries", path: "/portfolio/galleries" },
   {
-    label: "Galleries",
-    path: "/portfolio/galleries",
+    label: "Others",
+    path: "#",
     subLinks: [
-      { label: "Wedding", path: "/portfolio/galleries/wedding" },
       { label: "Artists", path: "/portfolio/galleries/artists" },
       { label: "Family", path: "/portfolio/galleries/family" },
       { label: "Birthdays", path: "/portfolio/galleries/birthdays" },
@@ -19,7 +19,7 @@ const navLinks = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null); // track which dropdown is open
+  const [dropdownOpen, setDropdownOpen] = useState(null);
 
   return (
     <header className="sticky top-0 z-50 bg-[#f9f6f3] text-[#1e1e1e]">
@@ -36,34 +36,32 @@ const Header = () => {
         {/* Right: Navigation (desktop) */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <div key={link.label} className="relative">
+            <div key={link.label} className="relative group">
               {link.subLinks ? (
                 <>
-                  {/* Parent Link for Desktop */}
-                  <NavLink
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `text-[#8c735b] hover:text-[#1e1e1e] ${
-                        isActive ? "font-semibold text-[#1e1e1e]" : ""
-                      }`
-                    }
+                  {/* Dropdown parent */}
+                  <button
+                    className="text-[#8c735b] hover:text-[#1e1e1e] transition-colors"
+                    onClick={(e) => e.preventDefault()}
                   >
                     {link.label}
-                  </NavLink>
-
-                  {/* Sublinks */}
-                  <div className="absolute mt-2 shadow-md bg-[#f9f6f3] border rounded p-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    {link.subLinks.map((sub) => (
+                  </button>
+                  
+                  {/* Dropdown menu */}
+                  <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-[#f9f6f3] border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    {link.subLinks.map((subLink) => (
                       <NavLink
-                        key={sub.path}
-                        to={sub.path}
+                        key={subLink.path}
+                        to={subLink.path}
                         className={({ isActive }) =>
-                          isActive
-                            ? "block text-[#1e1e1e] font-semibold"
-                            : "block text-[#8c735b] hover:text-[#1e1e1e]"
+                          `block px-4 py-2 text-sm transition-colors ${
+                            isActive
+                              ? "text-[#1e1e1e] font-semibold bg-gray-100"
+                              : "text-[#8c735b] hover:text-[#1e1e1e] hover:bg-gray-50"
+                          }`
                         }
                       >
-                        {sub.label}
+                        {subLink.label}
                       </NavLink>
                     ))}
                   </div>
@@ -104,7 +102,7 @@ const Header = () => {
           <div key={link.label} className="relative">
             {link.subLinks ? (
               <>
-                {/* Parent Link for Mobile (toggle sublinks) */}
+                {/* Mobile dropdown parent */}
                 <button
                   onClick={() =>
                     setDropdownOpen(
@@ -116,24 +114,27 @@ const Header = () => {
                   {link.label}
                 </button>
 
-                {/* Sublinks for Mobile */}
+                {/* Mobile dropdown items */}
                 <div
                   className={`${
                     dropdownOpen === link.label ? "block" : "hidden"
                   } flex flex-col items-center mt-2 space-y-1`}
                 >
-                  {link.subLinks.map((sub) => (
+                  {link.subLinks.map((subLink) => (
                     <NavLink
-                      key={sub.path}
-                      to={sub.path}
-                      onClick={() => setMenuOpen(false)}
+                      key={subLink.path}
+                      to={subLink.path}
+                      onClick={() => {
+                        setMenuOpen(false);
+                        setDropdownOpen(null);
+                      }}
                       className={({ isActive }) =>
                         isActive
-                          ? "text-[#1e1e1e] font-semibold"
-                          : "text-[#8c735b] hover:text-[#1e1e1e]"
+                          ? "text-[#1e1e1e] font-semibold text-sm"
+                          : "text-[#8c735b] hover:text-[#1e1e1e] text-sm"
                       }
                     >
-                      {sub.label}
+                      {subLink.label}
                     </NavLink>
                   ))}
                 </div>

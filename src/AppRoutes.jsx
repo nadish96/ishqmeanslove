@@ -4,7 +4,11 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import PortfolioGallery from "./pages/PortfolioGallery";
-import PortfolioWedding from "./pages/PortfolioWedding";
+import PortfolioWeddingsHub from "./pages/PortfolioWeddingsHub";
+import WeddingSarahAndMike from "./pages/WeddingSarahAndMike";
+import WeddingDowntownLoft from "./pages/WeddingDowntownLoft";
+import WeddingFallVineyard from "./pages/WeddingFallVineyard";
+import WeddingGardenCeremony from "./pages/WeddingGardenCeremony";
 import PortfolioArtists from "./pages/PortfolioArtists";
 import PortfolioFamily from "./pages/PortfolioFamily";
 import PortfolioBirthdays from "./pages/PortfolioBirthdays";
@@ -23,7 +27,13 @@ const AppRoutes = () => {
             <Route index element={<Portfolio />} />
             <Route path="galleries">
               <Route index element={<PortfolioGallery />} />
-              <Route path="wedding" element={<PortfolioWedding />} />
+              <Route path="weddings">
+                <Route index element={<PortfolioWeddingsHub />} />
+                <Route path="sarah-and-mike" element={<WeddingSarahAndMike />} />
+                <Route path="downtown-loft" element={<WeddingDowntownLoft />} />
+                <Route path="fall-vineyard" element={<WeddingFallVineyard />} />
+                <Route path="garden-ceremony" element={<WeddingGardenCeremony />} />
+              </Route>
               <Route path="artists" element={<PortfolioArtists />} />
               <Route path="family" element={<PortfolioFamily />} />
               <Route path="birthdays" element={<PortfolioBirthdays />} />

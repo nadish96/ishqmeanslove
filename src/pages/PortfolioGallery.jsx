@@ -1,30 +1,34 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 
-const galleries = [
+const weddingGalleries = [
   { 
-    title: "Wedding", 
-    slug: "wedding", 
+    title: "Sarah & Mike", 
+    slug: "sarah-and-mike", 
     cover: "/images/grid/image8.jpg",
-    description: "Capturing the magic and emotion of your special day."
+    description: "Elegant garden ceremony with timeless romance",
+    venue: "Garden Venue, Houston"
   },
   { 
-    title: "Artists", 
-    slug: "artists", 
+    title: "Downtown Loft", 
+    slug: "downtown-loft", 
     cover: "/images/grid/image9.jpg",
-    description: "Creative portraits and artistic expression through the lens."
+    description: "Urban chic wedding with industrial charm",
+    venue: "Industrial Loft, Houston"
   },
   { 
-    title: "Family", 
-    slug: "family", 
+    title: "Fall Vineyard", 
+    slug: "fall-vineyard", 
     cover: "/images/grid/image10.jpg",
-    description: "Cherished moments with your loved ones, captured forever."
+    description: "Autumn celebration among the vines",
+    venue: "Vineyard Estate, Texas Hill Country"
   },
   { 
-    title: "Birthdays", 
-    slug: "birthdays", 
+    title: "Garden Ceremony", 
+    slug: "garden-ceremony", 
     cover: "/images/grid/image11.jpg",
-    description: "Celebrating life's milestones with joy and laughter."
+    description: "Intimate outdoor celebration in bloom",
+    venue: "Botanical Gardens, Houston"
   },
 ];
 
@@ -33,32 +37,35 @@ const PortfolioGallery = () => {
     <PageWrapper>
       <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
-          <h1 className="text-4xl font-serif font-semibold uppercase text-[#8c735b] mb-4">
-            Galleries
+          <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
+            Wedding Galleries
           </h1>
-          <p className="text-[#4b4b4b] mb-12 text-lg">
-            Explore my different photography collections, each telling unique stories through specialized styles and moments.
+          <p className="text-[#4b4b4b] mb-12 text-lg font-alt-body">
+            Each wedding tells a unique love story. Explore these celebrations of couples who trusted me to capture their most precious moments.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {galleries.map((gallery, index) => (
+            {weddingGalleries.map((wedding, index) => (
               <Link
                 key={index}
-                to={`/portfolio/galleries/${gallery.slug}`}
+                to={`/portfolio/galleries/weddings/${wedding.slug}`}
                 className="group block"
               >
                 <div className="aspect-[4/3] overflow-hidden rounded shadow-sm mb-4">
                   <img
-                    src={gallery.cover}
-                    alt={gallery.title}
+                    src={wedding.cover}
+                    alt={wedding.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h3 className="text-2xl font-serif font-semibold text-[#1e1e1e] mb-2">
-                  {gallery.title}
+                <h3 className="text-2xl font-alt-heading font-semibold text-[#1e1e1e] mb-2">
+                  {wedding.title}
                 </h3>
-                <p className="text-[#4b4b4b]">
-                  {gallery.description}
+                <p className="text-[#4b4b4b] font-alt-body mb-1">
+                  {wedding.description}
+                </p>
+                <p className="text-[#8c735b] font-alt-body text-sm">
+                  {wedding.venue}
                 </p>
               </Link>
             ))}
