@@ -22,7 +22,7 @@ const weddingGalleries = [
 const Home = () => {
   return (
     <PageWrapper>
-      <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
+      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
         {/* Hero Section */}
         <div className="mb-24">
           <HeroImage image={heroImage} alt="Nadish Sood Photography Hero" />
@@ -42,7 +42,7 @@ const Home = () => {
             
             {/* Content */}
             <div className="flex flex-col justify-center">
-              <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#8c735b] mb-4">
+              <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#b8860b] mb-4">
                 Your Wedding Story
               </h2>
               <h3 className="text-xl text-[#6b6b6b] mb-6 font-alt-body font-light">
@@ -56,7 +56,7 @@ const Home = () => {
               </p>
               <Link
                 to="/portfolio"
-                className="inline-flex items-center text-[#8c735b] hover:text-[#1e1e1e] font-medium transition-colors"
+                className="inline-flex items-center text-[#b8860b] hover:text-[#2c2c2c] font-medium transition-colors"
               >
                 View Wedding Portfolio
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Content */}
             <div className="flex flex-col justify-center lg:order-1">
-              <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#8c735b] mb-8">
+              <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#b8860b] mb-8">
                 Your Wedding Photographer
               </h2>
               <p className="text-[#4b4b4b] text-lg font-alt-body leading-relaxed">
@@ -97,7 +97,7 @@ const Home = () => {
         {/* Wedding Portfolio Preview Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
+            <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-4">
               Wedding Portfolio
             </h2>
             <p className="text-[#4b4b4b] text-lg font-alt-body">
@@ -110,7 +110,7 @@ const Home = () => {
           <div className="mt-4">
             <Link
               to="/portfolio"
-              className="text-[#8c735b] hover:text-[#1e1e1e] underline"
+              className="text-[#b8860b] hover:text-[#2c2c2c] underline"
             >
               View Full Portfolio →
             </Link>
@@ -120,7 +120,7 @@ const Home = () => {
         {/* Galleries Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
+            <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-4">
               Wedding Galleries
             </h2>
             <p className="text-[#4b4b4b] text-lg font-alt-body">
@@ -146,7 +146,7 @@ const Home = () => {
           <div className="mt-4">
             <Link
               to="/portfolio/galleries"
-              className="text-[#8c735b] hover:text-[#1e1e1e] underline"
+              className="text-[#b8860b] hover:text-[#2c2c2c] underline"
             >
               View All Wedding Galleries →
             </Link>

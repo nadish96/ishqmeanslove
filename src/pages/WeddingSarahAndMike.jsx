@@ -19,26 +19,26 @@ const WeddingSarahAndMike = () => {
 
   return (
     <PageWrapper>
-      <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
+      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
           {/* Back link */}
           <div className="mb-8">
             <Link 
               to="/portfolio/galleries"
-              className="text-[#8c735b] hover:text-[#1e1e1e] font-alt-body"
+              className="text-[#b8860b] hover:text-[#2c2c2c] font-alt-body"
             >
               ← Back to Wedding Galleries
             </Link>
           </div>
 
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-alt-heading font-semibold text-[#8c735b] mb-4">
+            <h1 className="text-4xl font-alt-heading font-semibold text-[#b8860b] mb-4">
               Sarah & Mike
             </h1>
             <p className="text-[#4b4b4b] text-lg font-alt-body mb-2">
               Elegant garden ceremony with timeless romance
             </p>
-            <p className="text-[#8c735b] font-alt-body">
+            <p className="text-[#b8860b] font-alt-body">
               Garden Venue, Houston
             </p>
           </div>

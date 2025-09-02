@@ -27,10 +27,10 @@ const weddingImages = [
 const Portfolio = () => {
   return (
     <PageWrapper>
-      <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
+      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-6">
+            <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-6">
               Wedding Photography Portfolio
             </h1>
             <p className="text-[#4b4b4b] mb-8 text-lg font-alt-body max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ const Portfolio = () => {
             
             <Link
               to="/portfolio/galleries"
-              className="inline-flex items-center bg-[#8c735b] text-white px-8 py-3 rounded font-alt-body font-medium hover:bg-[#6b5a47] transition-colors"
+              className="inline-flex items-center bg-[#b8860b] text-white px-8 py-3 rounded font-alt-body font-medium hover:bg-[#daa520] transition-colors"
             >
               Browse Wedding Albums
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ const Portfolio = () => {
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <h2 className="text-2xl font-alt-heading font-semibold text-[#8c735b] mb-4">
+            <h2 className="text-2xl font-alt-heading font-semibold text-[#b8860b] mb-4">
               Ready to see more?
             </h2>
             <p className="text-[#4b4b4b] mb-6 font-alt-body">
@@ -72,7 +72,7 @@ const Portfolio = () => {
             </p>
             <Link
               to="/portfolio/galleries"
-              className="inline-flex items-center text-[#8c735b] hover:text-[#1e1e1e] font-alt-body font-medium transition-colors"
+              className="inline-flex items-center text-[#b8860b] hover:text-[#2c2c2c] font-alt-body font-medium transition-colors"
             >
               View Wedding Albums
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

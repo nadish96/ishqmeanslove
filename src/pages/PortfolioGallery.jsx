@@ -35,9 +35,9 @@ const weddingGalleries = [
 const PortfolioGallery = () => {
   return (
     <PageWrapper>
-      <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
+      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
-          <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
+          <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-4">
             Wedding Galleries
           </h1>
           <p className="text-[#4b4b4b] mb-12 text-lg font-alt-body">
@@ -58,13 +58,13 @@ const PortfolioGallery = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h3 className="text-2xl font-alt-heading font-semibold text-[#1e1e1e] mb-2">
+                <h3 className="text-2xl font-alt-heading font-semibold text-[#2c2c2c] mb-2">
                   {wedding.title}
                 </h3>
                 <p className="text-[#4b4b4b] font-alt-body mb-1">
                   {wedding.description}
                 </p>
-                <p className="text-[#8c735b] font-alt-body text-sm">
+                <p className="text-[#b8860b] font-alt-body text-sm">
                   {wedding.venue}
                 </p>
               </Link>

@@ -4,9 +4,9 @@ import PageWrapper from "../components/PageWrapper";
 const PortfolioWeddingsHub = () => {
   return (
     <PageWrapper>
-      <div className="bg-[#f9f6f3] min-h-screen text-[#1e1e1e]">
+      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
-          <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#8c735b] mb-4">
+          <h1 className="text-4xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-4">
             Wedding Photography
           </h1>
           <p className="text-[#4b4b4b] mb-12 text-lg font-alt-body">
@@ -17,7 +17,7 @@ const PortfolioWeddingsHub = () => {
           <div className="mb-8">
             <Link 
               to="/portfolio/galleries"
-              className="text-[#8c735b] hover:text-[#1e1e1e] font-alt-body"
+              className="text-[#b8860b] hover:text-[#2c2c2c] font-alt-body"
             >
               ← Back to All Galleries
             </Link>

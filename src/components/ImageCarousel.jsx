@@ -73,8 +73,8 @@ const ImageCarousel = ({ images, autoPlay = false, autoPlayInterval = 4000 }) =>
             onClick={() => goToSlide(index)}
             className={`flex-shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition-all duration-200 ${
               index === currentIndex
-                ? 'border-[#8c735b] ring-2 ring-[#8c735b]/30'
-                : 'border-gray-300 hover:border-[#8c735b]/50'
+                ? 'border-[#b8860b] ring-2 ring-[#b8860b]/30'
+                : 'border-gray-300 hover:border-[#b8860b]/50'
             }`}
           >
             <img
@@ -94,8 +94,8 @@ const ImageCarousel = ({ images, autoPlay = false, autoPlayInterval = 4000 }) =>
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-all duration-200 ${
               index === currentIndex
-                ? 'bg-[#8c735b]'
-                : 'bg-gray-300 hover:bg-[#8c735b]/50'
+                ? 'bg-[#b8860b]'
+                : 'bg-gray-300 hover:bg-[#b8860b]/50'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

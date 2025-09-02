@@ -22,13 +22,13 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#f9f6f3] text-[#1e1e1e]">
+    <header className="sticky top-0 z-50 bg-[#faf8f5] text-[#2c2c2c]">
       {/* Top Bar */}
       <div className="py-4 px-6 pb-8 flex items-center justify-between">
         {/* Left: Site title */}
         <NavLink 
           to="/"
-          className="whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-alt-heading font-bold tracking-wide uppercase text-[#1e1e1e] hover:text-[#8c735b] transition-colors"
+          className="whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-alt-heading font-bold tracking-wide uppercase text-[#2c2c2c] hover:text-[#b8860b] transition-colors"
         >
           Nadish Sood
         </NavLink>
@@ -41,14 +41,14 @@ const Header = () => {
                 <>
                   {/* Dropdown parent */}
                   <button
-                    className="text-[#8c735b] hover:text-[#1e1e1e] transition-colors"
+                    className="text-[#b8860b] hover:text-[#2c2c2c] transition-colors"
                     onClick={(e) => e.preventDefault()}
                   >
                     {link.label}
                   </button>
                   
                   {/* Dropdown menu */}
-                  <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-[#f9f6f3] border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-[#faf8f5] border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {link.subLinks.map((subLink) => (
                       <NavLink
                         key={subLink.path}
@@ -56,8 +56,8 @@ const Header = () => {
                         className={({ isActive }) =>
                           `block px-4 py-2 text-sm transition-colors ${
                             isActive
-                              ? "text-[#1e1e1e] font-semibold bg-gray-100"
-                              : "text-[#8c735b] hover:text-[#1e1e1e] hover:bg-gray-50"
+                              ? "text-[#2c2c2c] font-semibold bg-gray-100"
+                              : "text-[#b8860b] hover:text-[#2c2c2c] hover:bg-gray-50"
                           }`
                         }
                       >
@@ -71,8 +71,8 @@ const Header = () => {
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[#1e1e1e] font-semibold"
-                      : "text-[#8c735b] hover:text-[#1e1e1e]"
+                      ? "text-[#2c2c2c] font-semibold"
+                      : "text-[#b8860b] hover:text-[#2c2c2c]"
                   }
                 >
                   {link.label}
@@ -84,7 +84,7 @@ const Header = () => {
 
         {/* Right: Hamburger (mobile) */}
         <button
-          className="block md:hidden text-[#1e1e1e] text-2xl"
+          className="block md:hidden text-[#2c2c2c] text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -109,7 +109,7 @@ const Header = () => {
                       dropdownOpen === link.label ? null : link.label
                     )
                   }
-                  className="text-[#8c735b] hover:text-[#1e1e1e]"
+                  className="text-[#b8860b] hover:text-[#2c2c2c]"
                 >
                   {link.label}
                 </button>
@@ -130,8 +130,8 @@ const Header = () => {
                       }}
                       className={({ isActive }) =>
                         isActive
-                          ? "text-[#1e1e1e] font-semibold text-sm"
-                          : "text-[#8c735b] hover:text-[#1e1e1e] text-sm"
+                          ? "text-[#2c2c2c] font-semibold text-sm"
+                          : "text-[#b8860b] hover:text-[#2c2c2c] text-sm"
                       }
                     >
                       {subLink.label}
@@ -145,8 +145,8 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#1e1e1e] font-semibold"
-                    : "text-[#8c735b] hover:text-[#1e1e1e]"
+                    ? "text-[#2c2c2c] font-semibold"
+                    : "text-[#b8860b] hover:text-[#2c2c2c]"
                 }
               >
                 {link.label}
