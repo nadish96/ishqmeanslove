@@ -2,16 +2,17 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const navLinks = [
+  { label: "Portfolio", path: "/portfolio" },
   {
-    label: "Weddings",
-    path: "/weddings",
+    label: "Galleries",
+    path: "/portfolio/galleries",
     subLinks: [
-      { label: "Highlights", path: "/weddings" },
-      { label: "Full Albums", path: "/weddings/albums" },
+      { label: "Wedding", path: "/portfolio/galleries/wedding" },
+      { label: "Artists", path: "/portfolio/galleries/artists" },
+      { label: "Family", path: "/portfolio/galleries/family" },
+      { label: "Birthdays", path: "/portfolio/galleries/birthdays" },
     ],
   },
-  { label: "Commercial", path: "/commercial" },
-  { label: "Personal", path: "/personal" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
@@ -35,9 +36,12 @@ const Header = () => {
         </a>
 
         {/* Center: Site title */}
-        <h1 className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-serif font-bold tracking-wide uppercase text-[#1e1e1e]">
+        <NavLink 
+          to="/"
+          className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-alt-heading font-bold tracking-wide uppercase text-[#1e1e1e] hover:text-[#8c735b] transition-colors"
+        >
           Nadish Sood
-        </h1>
+        </NavLink>
 
         {/* Right: Hamburger (mobile) */}
         <button

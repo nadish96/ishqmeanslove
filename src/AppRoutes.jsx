@@ -1,14 +1,15 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import MainLayout from "./layouts/MainLayout";
-import Weddings from "./pages/Weddings";
-import WeddingAlbums from "./pages/WeddingAlbums";
-import WeddingAlbumDetails from "./pages/WeddingAlbumDetails";
-import Commercial from "./pages/Commercial";
-import Personal from "./pages/Personal";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import PortfolioGallery from "./pages/PortfolioGallery";
+import PortfolioWedding from "./pages/PortfolioWedding";
+import PortfolioArtists from "./pages/PortfolioArtists";
+import PortfolioFamily from "./pages/PortfolioFamily";
+import PortfolioBirthdays from "./pages/PortfolioBirthdays";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import WeddingHighlights from "./pages/WeddingHighlights";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -17,27 +18,20 @@ const AppRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Navigate to="weddings" replace />} />
-
-          <Route path="weddings">
-            <Route index element={<Weddings />} />
-            <Route path="albums" element={<WeddingAlbums />} />
-            <Route path="albums/:albumSlug" element={<WeddingAlbumDetails />} />
-            <Route path="highlights" element={<WeddingHighlights />} />
+          <Route index element={<Home />} />
+          <Route path="portfolio">
+            <Route index element={<Portfolio />} />
+            <Route path="galleries">
+              <Route index element={<PortfolioGallery />} />
+              <Route path="wedding" element={<PortfolioWedding />} />
+              <Route path="artists" element={<PortfolioArtists />} />
+              <Route path="family" element={<PortfolioFamily />} />
+              <Route path="birthdays" element={<PortfolioBirthdays />} />
+            </Route>
           </Route>
-
-          <Route path="commercial">
-            <Route index element={<Commercial />} />
-          </Route>
-
-          <Route path="personal">
-            <Route index element={<Personal />} />
-          </Route>
-
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-
-          <Route path="*" element={<Navigate to="weddings" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />3{" "}
         </Route>
       </Routes>
     </AnimatePresence>
