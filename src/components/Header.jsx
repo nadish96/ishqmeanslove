@@ -2,15 +2,14 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Portfolio", path: "/portfolio" },
-  { label: "Galleries", path: "/portfolio/galleries" },
+  { label: "Weddings", path: "/portfolio/weddings" },
   {
     label: "Others",
     path: "#",
     subLinks: [
-      { label: "Artists", path: "/portfolio/galleries/artists" },
-      { label: "Family", path: "/portfolio/galleries/family" },
-      { label: "Birthdays", path: "/portfolio/galleries/birthdays" },
+      { label: "Artists", path: "/portfolio/artists" },
+      { label: "Family", path: "/portfolio/family" },
+      { label: "Birthdays", path: "/portfolio/birthdays" },
     ],
   },
   { label: "About", path: "/about" },
@@ -24,7 +23,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-[#faf8f5] text-[#2c2c2c]">
       {/* Top Bar */}
-      <div className="py-4 px-6 pb-8 flex items-center justify-between">
+      <div className="py-6 px-8 pb-10 flex items-center justify-between">
         {/* Left: Site title */}
         <NavLink 
           to="/"
@@ -34,7 +33,7 @@ const Header = () => {
         </NavLink>
 
         {/* Right: Navigation (desktop) */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <div key={link.label} className="relative group">
               {link.subLinks ? (
@@ -48,13 +47,13 @@ const Header = () => {
                   </button>
                   
                   {/* Dropdown menu */}
-                  <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-[#faf8f5] border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="absolute top-full left-0 mt-3 py-3 w-48 bg-[#faf8f5] border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     {link.subLinks.map((subLink) => (
                       <NavLink
                         key={subLink.path}
                         to={subLink.path}
                         className={({ isActive }) =>
-                          `block px-4 py-2 text-sm transition-colors ${
+                          `block px-4 py-3 text-sm transition-all duration-200 rounded-md ${
                             isActive
                               ? "text-[#2c2c2c] font-semibold bg-gray-100"
                               : "text-[#b8860b] hover:text-[#2c2c2c] hover:bg-gray-50"

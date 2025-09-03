@@ -13,10 +13,26 @@ const curatedHighlights = [
 ];
 
 const weddingGalleries = [
-  { title: "Sarah & Mike", slug: "sarah-and-mike", cover: "/images/grid/image8.jpg" },
-  { title: "Downtown Loft", slug: "downtown-loft", cover: "/images/grid/image9.jpg" },
-  { title: "Fall Vineyard", slug: "fall-vineyard", cover: "/images/grid/image10.jpg" },
-  { title: "Garden Ceremony", slug: "garden-ceremony", cover: "/images/grid/image11.jpg" },
+  {
+    title: "Sarah & Mike",
+    slug: "sarah-and-mike",
+    cover: "/images/grid/image8.jpg",
+  },
+  {
+    title: "Downtown Loft",
+    slug: "downtown-loft",
+    cover: "/images/grid/image9.jpg",
+  },
+  {
+    title: "Fall Vineyard",
+    slug: "fall-vineyard",
+    cover: "/images/grid/image10.jpg",
+  },
+  {
+    title: "Garden Ceremony",
+    slug: "garden-ceremony",
+    cover: "/images/grid/image11.jpg",
+  },
 ];
 
 const Home = () => {
@@ -24,43 +40,47 @@ const Home = () => {
     <PageWrapper>
       <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
         {/* Hero Section */}
-        <div className="mb-24">
+        <div className="mb-32">
           <HeroImage image={heroImage} alt="Nadish Sood Photography Hero" />
         </div>
 
         {/* First Section - Photo Left */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Photo */}
-            <div className="aspect-[4/3] overflow-hidden rounded shadow-sm">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500">
               <img
                 src="/images/grid/image1.jpg"
                 alt="Wedding Photography Sample"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            
+
             {/* Content */}
-            <div className="flex flex-col justify-center">
-              <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#b8860b] mb-4">
-                Your Wedding Story
+            <div className="flex flex-col justify-center py-8">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-alt-heading font-semibold text-[#b8860b] mb-6">
+                Why Me
               </h2>
-              <h3 className="text-xl text-[#6b6b6b] mb-6 font-alt-body font-light">
-                Let me capture the wedding photos you've always dreamed of
-              </h3>
-              <p className="text-[#4b4b4b] text-lg font-alt-body leading-relaxed mb-8">
-                Your wedding day is one of the most important days of your life. I specialize in 
-                capturing the authentic emotions, intimate moments, and joyful celebrations that 
-                make your love story unique. From getting ready to your first dance, every precious 
-                moment will be beautifully preserved.
+              <p className="text-[#4b4b4b] text-lg lg:text-xl font-alt-body leading-relaxed mb-10">
+                Hi, I'm Nadish. I approach wedding photography differently—while others orchestrate moments, I believe the best shots happen when you forget I'm there. This is YOUR day, and I'm here to help you in any way possible. I work cohesively with you and everyone involved to capture every genuine emotion.
               </p>
               <Link
-                to="/portfolio"
-                className="inline-flex items-center text-[#b8860b] hover:text-[#2c2c2c] font-medium transition-colors"
+                to="/portfolio/weddings"
+                className="inline-flex items-center text-[#b8860b] hover:text-[#2c2c2c] font-medium transition-all duration-300 hover:translate-x-2"
               >
                 View Wedding Portfolio
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </Link>
             </div>
@@ -68,85 +88,90 @@ const Home = () => {
         </div>
 
         {/* Second Section - Photo Right */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
-            <div className="flex flex-col justify-center lg:order-1">
-              <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold text-[#b8860b] mb-8">
-                Your Wedding Photographer
+            <div className="flex flex-col justify-center lg:order-1 py-8">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-alt-heading font-semibold text-[#b8860b] mb-10">
+                What You Get
               </h2>
-              <p className="text-[#4b4b4b] text-lg font-alt-body leading-relaxed">
-                I understand that your wedding day is filled with countless precious moments that 
-                happen in the blink of an eye. My approach is unobtrusive yet comprehensive, ensuring 
-                I capture both the grand celebrations and quiet intimate moments that make your day 
-                uniquely yours. Every couple has a different story, and I'm here to tell yours beautifully.
+              <p className="text-[#4b4b4b] text-lg lg:text-xl font-alt-body leading-relaxed">
+                You'll get timely delivery, private gallery, no hidden costs, and custom requests accepted. Cinematic, stunning images that feel timeless and transport you back to exactly how your wedding day felt.
               </p>
             </div>
-            
+
             {/* Photo */}
-            <div className="aspect-[4/3] overflow-hidden rounded shadow-sm lg:order-2">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 lg:order-2">
               <img
                 src="/images/grid/image2.jpg"
                 alt="Portrait Photography Sample"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
         </div>
 
         {/* Wedding Portfolio Preview Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-4">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-6">
               Wedding Portfolio
             </h2>
-            <p className="text-[#4b4b4b] text-lg font-alt-body">
+            <p className="text-[#4b4b4b] text-lg lg:text-xl font-alt-body max-w-2xl mx-auto leading-relaxed">
               A preview of my favorite wedding moments and celebrations.
             </p>
           </div>
-          <div className="group max-w-2xl mx-auto">
-            <ImageCarousel images={curatedHighlights} autoPlay={true} autoPlayInterval={5000} />
+          <div className="group max-w-3xl mx-auto shadow-2xl rounded-xl overflow-hidden">
+            <ImageCarousel
+              images={curatedHighlights}
+              autoPlay={true}
+              autoPlayInterval={5000}
+            />
           </div>
-          <div className="mt-4">
+          <div className="mt-8 text-center">
             <Link
-              to="/portfolio"
-              className="text-[#b8860b] hover:text-[#2c2c2c] underline"
+              to="/portfolio/weddings"
+              className="text-[#b8860b] hover:text-[#2c2c2c] underline transition-all duration-300 hover:translate-x-1"
             >
-              View Full Portfolio →
+              View Wedding Portfolio →
             </Link>
           </div>
         </div>
 
         {/* Galleries Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-4">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-6">
               Wedding Galleries
             </h2>
-            <p className="text-[#4b4b4b] text-lg font-alt-body">
+            <p className="text-[#4b4b4b] text-lg lg:text-xl font-alt-body max-w-2xl mx-auto leading-relaxed">
               Recent wedding celebrations I've had the honor to capture.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-8">
             {weddingGalleries.map((gallery, index) => (
               <Link
                 key={index}
-                to={`/portfolio/galleries/weddings/${gallery.slug}`}
-                className="block"
+                to={`/portfolio/weddings/gallery/${gallery.slug}`}
+                className="block group"
               >
-                <img
-                  src={gallery.cover}
-                  alt={gallery.title}
-                  className="w-full h-auto object-cover rounded shadow-sm"
-                />
-                <h3 className="mt-2 text-lg font-alt-heading">{gallery.title}</h3>
+                <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
+                  <img
+                    src={gallery.cover}
+                    alt={gallery.title}
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <h3 className="mt-4 text-lg lg:text-xl font-alt-heading group-hover:text-[#b8860b] transition-colors duration-300">
+                  {gallery.title}
+                </h3>
               </Link>
             ))}
           </div>
-          <div className="mt-4">
+          <div className="mt-10 text-center">
             <Link
-              to="/portfolio/galleries"
-              className="text-[#b8860b] hover:text-[#2c2c2c] underline"
+              to="/portfolio/weddings/gallery"
+              className="text-[#b8860b] hover:text-[#2c2c2c] underline transition-all duration-300 hover:translate-x-1"
             >
               View All Wedding Galleries →
             </Link>

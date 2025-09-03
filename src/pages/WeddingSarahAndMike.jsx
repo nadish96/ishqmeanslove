@@ -24,7 +24,7 @@ const WeddingSarahAndMike = () => {
           {/* Back link */}
           <div className="mb-8">
             <Link 
-              to="/portfolio/galleries"
+              to="/portfolio/weddings/gallery"
               className="text-[#b8860b] hover:text-[#2c2c2c] font-alt-body"
             >
               ← Back to Wedding Galleries

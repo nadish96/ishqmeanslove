@@ -23,7 +23,7 @@ const WeddingFallVineyard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16">
           <div className="mb-8">
             <Link 
-              to="/portfolio/galleries"
+              to="/portfolio/weddings/gallery"
               className="text-[#b8860b] hover:text-[#2c2c2c] font-alt-body"
             >
               ← Back to Wedding Galleries
