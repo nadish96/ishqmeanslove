@@ -6,6 +6,7 @@ import ImageCarousel from "../components/ImageCarousel";
 const heroImage = "/images/hero.jpg";
 
 const curatedHighlights = [
+  "/images/hero.jpg",
   "/images/grid/image4.jpg",
   "/images/grid/image5.jpg",
   "/images/grid/image6.jpg",
@@ -121,7 +122,7 @@ const Home = () => {
               A preview of my favorite wedding moments and celebrations.
             </p>
           </div>
-          <div className="group max-w-3xl mx-auto shadow-2xl rounded-xl overflow-hidden">
+          <div className="group">
             <ImageCarousel
               images={curatedHighlights}
               autoPlay={true}
