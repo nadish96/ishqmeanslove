@@ -154,7 +154,7 @@ export default function PhotoGallery({
   targetRowHeight = 320,
   maxWidth = 1100,
   featureRatio = 1.9, // auto-feature very wide landscapes
-  featureIndices = [7, 9, 12], // force specific indices as solo rows
+  featureIndices = [], // force specific indices as solo rows
   centerLastRow = false, // optional: center the final row
 }) {
   const [items, setItems] = useState(() => normalizeImages(images));

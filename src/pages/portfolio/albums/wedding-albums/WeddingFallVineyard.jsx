@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import PageWrapper from "../components/PageWrapper";
-import PhotoGallery from "../components/PhotoGallery";
+import PageWrapper from "../../../../components/PageWrapper";
+import PhotoGallery from "../../../../components/PhotoGallery";
 
 const WeddingFallVineyard = () => {
   const weddingImages = [

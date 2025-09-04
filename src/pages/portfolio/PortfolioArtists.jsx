@@ -1,4 +1,5 @@
-import PageWrapper from "../components/PageWrapper";
+import PageWrapper from "../../components/PageWrapper";
+import PhotoGallery from "../../components/PhotoGallery";
 
 const artistImages = [
   "/images/grid/image9.jpg",
@@ -23,17 +24,10 @@ const PortfolioArtists = () => {
             Creative portraits and artistic expression through the lens.
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {artistImages.map((image, index) => (
-              <div key={index} className="aspect-[4/3] overflow-hidden rounded shadow-sm">
-                <img
-                  src={image}
-                  alt={`Artist ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
+          <PhotoGallery 
+            images={artistImages}
+            galleryId="artist-portfolio-gallery"
+          />
         </div>
       </div>
     </PageWrapper>

@@ -2,15 +2,15 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
-import PortfolioWeddings from "./pages/PortfolioWeddings";
-import PortfolioGalleryWedding from "./pages/PortfolioGalleryWedding";
-import WeddingSarahAndMike from "./pages/WeddingSarahAndMike";
-import WeddingDowntownLoft from "./pages/WeddingDowntownLoft";
-import WeddingFallVineyard from "./pages/WeddingFallVineyard";
-import WeddingGardenCeremony from "./pages/WeddingGardenCeremony";
-import PortfolioArtists from "./pages/PortfolioArtists";
-import PortfolioFamily from "./pages/PortfolioFamily";
-import PortfolioBirthdays from "./pages/PortfolioBirthdays";
+import PortfolioWeddings from "./pages/portfolio/PortfolioWeddings";
+import PortfolioGalleryWedding from "./pages/portfolio/PortfolioGalleryWedding";
+import WeddingSarahAndMike from "./pages/portfolio/albums/wedding-albums/WeddingSarahAndMike";
+import WeddingDowntownLoft from "./pages/portfolio/albums/wedding-albums/WeddingDowntownLoft";
+import WeddingFallVineyard from "./pages/portfolio/albums/wedding-albums/WeddingFallVineyard";
+import WeddingGardenCeremony from "./pages/portfolio/albums/wedding-albums/WeddingGardenCeremony";
+import PortfolioArtists from "./pages/portfolio/PortfolioArtists";
+import PortfolioFamily from "./pages/portfolio/PortfolioFamily";
+import PortfolioBirthdays from "./pages/portfolio/PortfolioBirthdays";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -37,6 +37,7 @@ const AppRoutes = () => {
                   path="garden-ceremony"
                   element={<WeddingGardenCeremony />}
                 />
+                2
               </Route>
             </Route>
             <Route path="artists" element={<PortfolioArtists />} />
