@@ -3,7 +3,29 @@ import PageWrapper from "../components/PageWrapper";
 import HeroImage from "../components/HeroImage";
 import ImageCarousel from "../components/ImageCarousel";
 
-const heroImage = "/images/hero.jpg";
+const heroImages = [
+  "/images/hero.jpg",
+  "/images/grid/image1.jpg",
+  "/images/grid/image2.jpg",
+  "/images/grid/image3.jpg",
+  "/images/grid/image4.jpg",
+  "/images/grid/image5.jpg",
+  "/images/grid/image6.jpg",
+  "/images/grid/image7.jpg",
+  "/images/grid/image8.jpg",
+  "/images/grid/image9.jpg",
+  "/images/grid/image10.jpg",
+  "/images/grid/image11.jpg",
+  "/images/grid/image12.jpg",
+  "/images/grid/image13.jpg",
+  "/images/grid/image14.jpg",
+  "/images/grid/image15.jpg",
+  "/images/grid/image16.jpg",
+  "/images/grid/image17.jpg",
+  "/images/grid/image18.jpg",
+  "/images/grid/image19.jpg",
+  "/images/grid/image20.jpg"
+];
 
 const curatedHighlights = [
   "/images/grid/image4.jpg",
@@ -42,12 +64,12 @@ const Home = () => {
     <PageWrapper>
       <div className="bg-white min-h-screen text-gray-900">
         {/* Minimal Hero Section */}
-        <div className="mb-24">
-          <HeroImage image={heroImage} alt="Nadish Sood Photography Hero" />
+        <div>
+          <HeroImage images={heroImages} alt="Nadish Sood Photography Hero" />
         </div>
 
         {/* Clean intro section */}
-        <div className="max-w-4xl mx-auto px-8 pb-24">
+        <div className="max-w-4xl mx-auto px-8 py-24">
           {/* Minimal intro text */}
           <div className="text-center mb-16">
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
