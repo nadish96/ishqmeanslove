@@ -1,5 +1,5 @@
-// src/components/PhotoGallery.jsx
-// Justified (Flickr-style) gallery with PhotoSwipe lightbox
+// src/components/PhotoGrid.jsx  
+// Justified (Flickr-style) photo grid with PhotoSwipe lightbox
 // - No cropping (object-contain)
 // - Occasional solo full-width rows for very-wide landscapes (auto or manual)
 // - Fixes “weird spacing” in the last row by NOT force-filling remainder
@@ -147,12 +147,12 @@ function layoutJustifiedWithFeatures(items, containerW, gap, config) {
 
 /* -------------------- component -------------------- */
 
-export default function PhotoGallery({
+export default function PhotoGrid({
   images, // string[] or [{src, w?, h?, alt?}, ...]
   galleryId = "gallery",
   gap = 12,
-  targetRowHeight = 320,
-  maxWidth = 1100,
+  targetRowHeight = 280,
+  maxWidth = 1200,
   featureRatio = 1.9, // auto-feature very wide landscapes
   featureIndices = [], // force specific indices as solo rows
   centerLastRow = false, // optional: center the final row

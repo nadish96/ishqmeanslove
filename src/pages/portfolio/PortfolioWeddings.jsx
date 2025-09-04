@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../../components/PageWrapper";
-import PhotoGallery from "../../components/PhotoGallery";
+import PhotoGrid from "../../components/PhotoGrid";
 
 const weddingImages = [
   "/images/grid/image1.jpg",
@@ -28,41 +28,30 @@ const weddingImages = [
 const PortfolioWeddings = () => {
   return (
     <PageWrapper>
-      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-20">
-          <div className="text-center mb-20">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-8">
-              Wedding Photography Portfolio
+      <div className="bg-white min-h-screen text-gray-900">
+        <div className="max-w-6xl mx-auto px-8 py-16">
+          <div className="text-center mb-16">
+            <h1 className="text-3xl font-serif text-gray-900 mb-6">
+              Wedding Portfolio
             </h1>
-            <p className="text-[#4b4b4b] mb-12 text-lg lg:text-xl font-alt-body max-w-4xl mx-auto leading-relaxed">
-              Every wedding is a unique celebration of love. Here's a curated collection of my favorite 
-              moments from the weddings I've had the privilege to capture. From intimate ceremonies to 
-              grand celebrations, each image tells a part of someone's love story.
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              A collection of moments from celebrations I've had the privilege to document.
             </p>
             
           </div>
           
-          <PhotoGallery 
+          <PhotoGrid 
             images={weddingImages}
             galleryId="wedding-portfolio-gallery"
           />
 
-          {/* Bottom CTA */}
-          <div className="text-center mt-20">
-            <h2 className="text-2xl lg:text-3xl font-alt-heading font-semibold text-[#b8860b] mb-6">
-              Ready to Explore More?
-            </h2>
-            <p className="text-[#4b4b4b] mb-8 text-lg font-alt-body max-w-2xl mx-auto leading-relaxed">
-              Dive into complete wedding stories and see how each celebration unfolded through my lens.
-            </p>
+          {/* Simple CTA */}
+          <div className="text-center mt-16">
             <Link
-              to="/portfolio/weddings/gallery"
-              className="inline-flex items-center bg-[#b8860b] text-white px-10 py-4 rounded-lg font-alt-body font-medium hover:bg-[#daa520] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              to="/portfolio/weddings/albums"
+              className="inline-block text-sm tracking-wide uppercase text-gray-900 border-b border-gray-300 hover:border-gray-900 transition-colors"
             >
-              Browse Wedding Albums
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              View Wedding Albums
             </Link>
           </div>
 

@@ -21,42 +21,42 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#faf8f5] text-[#2c2c2c]">
-      {/* Top Bar */}
-      <div className="py-6 px-8 pb-10 flex items-center justify-between">
-        {/* Left: Site title */}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      {/* Minimal top bar */}
+      <div className="max-w-6xl mx-auto px-8 py-8 flex items-center justify-between">
+        {/* Left: Simple site title */}
         <NavLink 
           to="/"
-          className="whitespace-nowrap text-2xl sm:text-3xl md:text-4xl font-alt-heading font-bold tracking-wide uppercase text-[#2c2c2c] hover:text-[#b8860b] transition-colors"
+          className="text-2xl font-serif text-gray-900 hover:text-gray-600 transition-colors"
         >
-          Nadish Sood
+          NADISH SOOD
         </NavLink>
 
-        {/* Right: Navigation (desktop) */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Right: Clean navigation (desktop) */}
+        <nav className="hidden md:flex items-center gap-12">
           {navLinks.map((link) => (
             <div key={link.label} className="relative group">
               {link.subLinks ? (
                 <>
-                  {/* Dropdown parent */}
+                  {/* Minimal dropdown parent */}
                   <button
-                    className="text-[#b8860b] hover:text-[#2c2c2c] transition-colors"
+                    className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors uppercase"
                     onClick={(e) => e.preventDefault()}
                   >
                     {link.label}
                   </button>
                   
-                  {/* Dropdown menu */}
-                  <div className="absolute top-full left-0 mt-3 py-3 w-48 bg-[#faf8f5] border border-gray-200 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  {/* Clean dropdown menu */}
+                  <div className="absolute top-full left-0 mt-4 py-2 min-w-32 bg-white border border-gray-100 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {link.subLinks.map((subLink) => (
                       <NavLink
                         key={subLink.path}
                         to={subLink.path}
                         className={({ isActive }) =>
-                          `block px-4 py-3 text-sm transition-all duration-200 rounded-md ${
+                          `block px-4 py-2 text-xs tracking-wide uppercase transition-colors ${
                             isActive
-                              ? "text-[#2c2c2c] font-semibold bg-gray-100"
-                              : "text-[#b8860b] hover:text-[#2c2c2c] hover:bg-gray-50"
+                              ? "text-gray-900 bg-gray-50"
+                              : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                           }`
                         }
                       >
@@ -69,9 +69,11 @@ const Header = () => {
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
-                    isActive
-                      ? "text-[#2c2c2c] font-semibold"
-                      : "text-[#b8860b] hover:text-[#2c2c2c]"
+                    `text-sm tracking-wide uppercase transition-colors ${
+                      isActive
+                        ? "text-gray-900 border-b border-gray-300"
+                        : "text-gray-600 hover:text-gray-900"
+                    }`
                   }
                 >
                   {link.label}
@@ -81,78 +83,86 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Right: Hamburger (mobile) */}
+        {/* Simple mobile menu button */}
         <button
-          className="block md:hidden text-[#2c2c2c] text-2xl"
+          className="block md:hidden text-gray-600 hover:text-gray-900 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? "✕" : "☰"}
+          <div className="w-5 h-0.5 bg-current mb-1"></div>
+          <div className="w-5 h-0.5 bg-current mb-1"></div>
+          <div className="w-5 h-0.5 bg-current"></div>
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Clean mobile navigation */}
       <nav
         className={`${
           menuOpen ? "block" : "hidden"
-        } md:hidden flex flex-col items-center gap-4 pb-4 border-t`}
+        } md:hidden bg-white border-t border-gray-100`}
       >
-        {navLinks.map((link) => (
-          <div key={link.label} className="relative">
-            {link.subLinks ? (
-              <>
-                {/* Mobile dropdown parent */}
-                <button
-                  onClick={() =>
-                    setDropdownOpen(
-                      dropdownOpen === link.label ? null : link.label
-                    )
+        <div className="max-w-6xl mx-auto px-8 py-6">
+          {navLinks.map((link) => (
+            <div key={link.label} className="mb-4">
+              {link.subLinks ? (
+                <>
+                  {/* Mobile dropdown parent */}
+                  <button
+                    onClick={() =>
+                      setDropdownOpen(
+                        dropdownOpen === link.label ? null : link.label
+                      )
+                    }
+                    className="text-sm tracking-wide uppercase text-gray-600 hover:text-gray-900 transition-colors block w-full text-left"
+                  >
+                    {link.label}
+                  </button>
+
+                  {/* Mobile dropdown items */}
+                  <div
+                    className={`${
+                      dropdownOpen === link.label ? "block" : "hidden"
+                    } mt-2 ml-4 space-y-2`}
+                  >
+                    {link.subLinks.map((subLink) => (
+                      <NavLink
+                        key={subLink.path}
+                        to={subLink.path}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setDropdownOpen(null);
+                        }}
+                        className={({ isActive }) =>
+                          `block text-xs tracking-wide uppercase transition-colors ${
+                            isActive
+                              ? "text-gray-900"
+                              : "text-gray-500 hover:text-gray-900"
+                          }`
+                        }
+                      >
+                        {subLink.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <NavLink
+                  to={link.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `block text-sm tracking-wide uppercase transition-colors ${
+                      isActive
+                        ? "text-gray-900"
+                        : "text-gray-600 hover:text-gray-900"
+                    }`
                   }
-                  className="text-[#b8860b] hover:text-[#2c2c2c]"
                 >
                   {link.label}
-                </button>
-
-                {/* Mobile dropdown items */}
-                <div
-                  className={`${
-                    dropdownOpen === link.label ? "block" : "hidden"
-                  } flex flex-col items-center mt-2 space-y-1`}
-                >
-                  {link.subLinks.map((subLink) => (
-                    <NavLink
-                      key={subLink.path}
-                      to={subLink.path}
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setDropdownOpen(null);
-                      }}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "text-[#2c2c2c] font-semibold text-sm"
-                          : "text-[#b8860b] hover:text-[#2c2c2c] text-sm"
-                      }
-                    >
-                      {subLink.label}
-                    </NavLink>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <NavLink
-                to={link.path}
-                onClick={() => setMenuOpen(false)}
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[#2c2c2c] font-semibold"
-                    : "text-[#b8860b] hover:text-[#2c2c2c]"
-                }
-              >
-                {link.label}
-              </NavLink>
-            )}
-          </div>
-        ))}
+                </NavLink>
+              )}
+            </div>
+          ))}
+        </div>
       </nav>
     </header>
   );

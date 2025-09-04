@@ -3,26 +3,33 @@ import PageWrapper from "../components/PageWrapper";
 const Contact = () => {
   return (
     <PageWrapper>
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-        <h2 className="text-3xl font-serif font-bold mb-4 text-[#2c2c2c] uppercase tracking-wide">
-          Let’s Talk
-        </h2>
-        <p className="text-[#4b4b4b] text-lg leading-relaxed font-light">
-          Whether you’re planning a wedding, a shoot, or just want to say hi —
-          I’d love to hear from you.
-        </p>
-        <p className="mt-6 text-[#4b4b4b] text-md font-light">
-          Text or WhatsApp me at <strong>+1 832-748-4040</strong> or DM me on{" "}
-          <a
-            href="https://www.instagram.com/nadishsood"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#b8860b] hover:text-[#2c2c2c] underline"
-          >
-            Instagram
-          </a>
-          .
-        </p>
+      <div className="bg-white min-h-screen text-gray-900">
+        <div className="max-w-2xl mx-auto px-8 py-16 text-center">
+          <h1 className="text-3xl font-serif mb-8 text-gray-900">
+            Contact
+          </h1>
+          <div className="space-y-6 text-gray-600 leading-relaxed">
+            <p>
+              Whether you're planning a wedding, a portrait session, or just want to say hello — I'd love to hear from you.
+            </p>
+            <div className="pt-4">
+              <p className="mb-2">
+                Text or WhatsApp: <span className="text-gray-900">+1 832-748-4040</span>
+              </p>
+              <p>
+                Instagram:{" "}
+                <a
+                  href="https://www.instagram.com/nadishsood"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-900 border-b border-gray-300 hover:border-gray-900 transition-colors"
+                >
+                  @nadishsood
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </PageWrapper>
   );

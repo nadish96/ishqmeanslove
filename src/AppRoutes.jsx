@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import PortfolioWeddings from "./pages/portfolio/PortfolioWeddings";
-import PortfolioGalleryWedding from "./pages/portfolio/PortfolioGalleryWedding";
+import PortfolioWeddingAlbums from "./pages/portfolio/PortfolioWeddingAlbums";
 import WeddingSarahAndMike from "./pages/portfolio/albums/wedding-albums/WeddingSarahAndMike";
 import WeddingDowntownLoft from "./pages/portfolio/albums/wedding-albums/WeddingDowntownLoft";
 import WeddingFallVineyard from "./pages/portfolio/albums/wedding-albums/WeddingFallVineyard";
@@ -25,8 +25,10 @@ const AppRoutes = () => {
           <Route path="portfolio">
             <Route path="weddings">
               <Route index element={<PortfolioWeddings />} />
-              <Route path="gallery">
-                <Route index element={<PortfolioGalleryWedding />} />
+              <Route path="albums">
+                <Route index element={<PortfolioWeddingAlbums />} />
+              </Route>
+              <Route path="album">
                 <Route
                   path="sarah-and-mike"
                   element={<WeddingSarahAndMike />}
@@ -37,7 +39,6 @@ const AppRoutes = () => {
                   path="garden-ceremony"
                   element={<WeddingGardenCeremony />}
                 />
-                2
               </Route>
             </Route>
             <Route path="artists" element={<PortfolioArtists />} />

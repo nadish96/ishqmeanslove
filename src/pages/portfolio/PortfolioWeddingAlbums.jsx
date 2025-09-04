@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../../components/PageWrapper";
 
-const weddingGalleries = [
+const weddingAlbums = [
   { 
     title: "Sarah & Mike", 
     slug: "sarah-and-mike", 
@@ -32,39 +32,47 @@ const weddingGalleries = [
   },
 ];
 
-const PortfolioGalleryWedding = () => {
+const PortfolioWeddingAlbums = () => {
   return (
     <PageWrapper>
-      <div className="bg-[#faf8f5] min-h-screen text-[#2c2c2c]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-20">
-          <h1 className="text-4xl lg:text-5xl font-alt-heading font-semibold uppercase text-[#b8860b] mb-6">
-            Wedding Galleries
-          </h1>
-          <p className="text-[#4b4b4b] mb-16 text-lg lg:text-xl font-alt-body max-w-3xl mx-auto leading-relaxed">
-            Each wedding tells a unique love story. Explore these celebrations of couples who trusted me to capture their most precious moments.
-          </p>
+      <div className="bg-white min-h-screen text-gray-900">
+        <div className="max-w-6xl mx-auto px-8 py-16">
+          <div className="text-center mb-16">
+            <Link
+              to="/portfolio/weddings"
+              className="inline-block text-sm tracking-wide uppercase text-gray-600 hover:text-gray-900 transition-colors mb-8"
+            >
+              ← Back to Portfolio
+            </Link>
+            <h1 className="text-3xl font-serif text-gray-900 mb-6">
+              Wedding Albums
+            </h1>
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Each wedding tells a unique love story. Explore these celebrations.
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {weddingGalleries.map((wedding, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {weddingAlbums.map((wedding, index) => (
               <Link
                 key={index}
-                to={`/portfolio/weddings/gallery/${wedding.slug}`}
+                to={`/portfolio/weddings/album/${wedding.slug}`}
                 className="group block"
               >
-                <div className="aspect-[4/3] overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 mb-6">
+                <div className="aspect-[4/3] overflow-hidden mb-4">
                   <img
                     src={wedding.cover}
                     alt={wedding.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
                   />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-alt-heading font-semibold text-[#2c2c2c] mb-3 group-hover:text-[#b8860b] transition-colors duration-300">
+                <h3 className="text-xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors mb-2">
                   {wedding.title}
                 </h3>
-                <p className="text-[#4b4b4b] font-alt-body mb-2 text-lg leading-relaxed">
+                <p className="text-gray-600 text-sm mb-1">
                   {wedding.description}
                 </p>
-                <p className="text-[#b8860b] font-alt-body text-base font-medium">
+                <p className="text-gray-500 text-sm">
                   {wedding.venue}
                 </p>
               </Link>
@@ -76,4 +84,4 @@ const PortfolioGalleryWedding = () => {
   );
 };
 
-export default PortfolioGalleryWedding;
+export default PortfolioWeddingAlbums;
