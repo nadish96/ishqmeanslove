@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
+import PhotoGallery from "../components/PhotoGallery";
 
 const weddingImages = [
   "/images/grid/image1.jpg",
@@ -41,17 +42,10 @@ const PortfolioWeddings = () => {
             
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {weddingImages.map((image, index) => (
-              <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
-                <img
-                  src={image}
-                  alt={`Wedding Portfolio ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-            ))}
-          </div>
+          <PhotoGallery 
+            images={weddingImages}
+            galleryId="wedding-portfolio-gallery"
+          />
 
           {/* Bottom CTA */}
           <div className="text-center mt-20">

@@ -56,13 +56,12 @@ const ImageCarousel = ({ images, autoPlay = false, autoPlayInterval = 4000 }) =>
   return (
     <div className="relative w-full mx-auto">
       {/* Main Carousel */}
-      <div className="overflow-hidden h-[700px]" ref={emblaRef}>
-        <div className="flex items-center h-full gap-2">
+      <div className="overflow-hidden h-[450px] sm:h-[500px] md:h-[550px] lg:h-[650px] xl:h-[700px]" ref={emblaRef}>
+        <div className="flex items-center h-full gap-2 sm:gap-3 md:gap-4">
           {images.map((image, index) => (
             <div
               key={index}
-              className="relative flex-none h-[650px] cursor-pointer"
-              style={{ aspectRatio: 'auto' }}
+              className="relative flex-none h-full cursor-pointer"
             >
               <img
                 src={image}

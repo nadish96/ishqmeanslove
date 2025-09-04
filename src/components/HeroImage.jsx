@@ -1,6 +1,6 @@
 const HeroImage = ({ image, alt = "Hero Image" }) => {
   return (
-    <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[95vh] overflow-hidden">
       <img src={image} alt={alt} className="w-full h-full object-cover" />
 
       {/* Overlay */}

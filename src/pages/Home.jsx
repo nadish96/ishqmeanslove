@@ -6,11 +6,12 @@ import ImageCarousel from "../components/ImageCarousel";
 const heroImage = "/images/hero.jpg";
 
 const curatedHighlights = [
-  "/images/hero.jpg",
   "/images/grid/image4.jpg",
   "/images/grid/image5.jpg",
-  "/images/grid/image6.jpg",
+  "/images/grid/image6.jpg", 
   "/images/grid/image7.jpg",
+  "/images/grid/image8.jpg",
+  "/images/grid/image9.jpg",
 ];
 
 const weddingGalleries = [
