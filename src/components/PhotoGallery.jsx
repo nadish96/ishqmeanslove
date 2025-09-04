@@ -21,20 +21,23 @@ const PhotoGallery = ({ images, galleryId = 'gallery' }) => {
   }, [galleryId]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-6">
-      <div id={galleryId} className="space-y-8">
+    <div className="w-full max-w-7xl mx-auto px-6">
+      <div 
+        id={galleryId} 
+        className="columns-1 md:columns-2 lg:columns-3 gap-6"
+      >
         {images.map((image, index) => (
           <a
             key={index}
             href={image}
             data-pswp-width="1200"
             data-pswp-height="800"
-            className="block flex justify-center"
+            className="block mb-6 break-inside-avoid hover:opacity-90 transition-opacity"
           >
             <img
               src={image}
               alt={`Photo ${index + 1}`}
-              className="max-w-full h-auto max-h-[70vh] object-contain"
+              className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
           </a>
