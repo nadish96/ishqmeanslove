@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Weddings", path: "/portfolio/weddings" },
+  { label: "Portfolio", path: "/portfolio/weddings" },
+  { label: "Albums", path: "/portfolio/weddings/albums" },
   {
     label: "Others",
     path: "#",

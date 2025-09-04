@@ -8,7 +8,7 @@ const heroImage = "/images/hero.jpg";
 const curatedHighlights = [
   "/images/grid/image4.jpg",
   "/images/grid/image5.jpg",
-  "/images/grid/image6.jpg", 
+  "/images/grid/image6.jpg",
   "/images/grid/image7.jpg",
   "/images/grid/image8.jpg",
   "/images/grid/image9.jpg",
@@ -51,7 +51,8 @@ const Home = () => {
           {/* Minimal intro text */}
           <div className="text-center mb-16">
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Capturing authentic moments and genuine emotions through a documentary approach to wedding photography.
+              Capturing authentic moments and genuine emotions through a
+              documentary approach to wedding photography.
             </p>
           </div>
 
@@ -72,7 +73,10 @@ const Home = () => {
                 About the Work
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                I approach wedding photography differently—while others orchestrate moments, I believe the best shots happen when you forget I'm there. This is your day, and I'm here to document every genuine emotion as it unfolds naturally.
+                I approach wedding photography differently—while others
+                orchestrate moments, I believe the best shots happen when you
+                forget I'm there. This is your day, and I'm here to document
+                every genuine emotion as it unfolds naturally.
               </p>
               <Link
                 to="/portfolio/weddings"
@@ -101,9 +105,7 @@ const Home = () => {
             <h2 className="text-2xl font-serif text-gray-900 mb-4">
               Recent Work
             </h2>
-            <p className="text-gray-600">
-              Recent wedding albums
-            </p>
+            <p className="text-gray-600">Recent wedding albums</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {weddingAlbums.map((album, index) => (

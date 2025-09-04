@@ -9,10 +9,10 @@ const HeroImage = ({ image, alt = "Hero Image" }) => {
       {/* Simple hero text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-8">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white mb-4">
-          Wedding Photography
+          For People in Love
         </h1>
         <p className="text-sm md:text-base tracking-widest uppercase text-white/90">
-          Nadish Sood
+          I am your photographer
         </p>
       </div>
     </div>
