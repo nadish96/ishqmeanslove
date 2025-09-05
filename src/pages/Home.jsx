@@ -38,24 +38,19 @@ const curatedHighlights = [
 
 const weddingAlbums = [
   {
-    title: "Sarah & Mike",
-    slug: "sarah-and-mike",
+    title: "Aparna & Rahul",
+    slug: "aparna-and-rahul",
     cover: "/images/grid/image8.jpg",
   },
   {
-    title: "Downtown Loft",
-    slug: "downtown-loft",
+    title: "Sneha & Akshay",
+    slug: "sneha-and-akshay",
     cover: "/images/grid/image9.jpg",
   },
   {
-    title: "Fall Vineyard",
-    slug: "fall-vineyard",
+    title: "Florencia's Wedding Dress",
+    slug: "florencias-wedding-dress",
     cover: "/images/grid/image10.jpg",
-  },
-  {
-    title: "Garden Ceremony",
-    slug: "garden-ceremony",
-    cover: "/images/grid/image11.jpg",
   },
 ];
 
@@ -63,73 +58,63 @@ const Home = () => {
   return (
     <PageWrapper>
       <div className="bg-white min-h-screen text-gray-900">
-        {/* Minimal Hero Section */}
+        {/* Hero Section with Carousel */}
         <div>
           <HeroImage images={heroImages} alt="Nadish Sood Photography Hero" />
         </div>
 
-        {/* Clean intro section */}
-        <div className="max-w-4xl mx-auto px-8 py-24">
-          {/* Minimal intro text */}
-          <div className="text-center mb-16">
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Capturing authentic moments and genuine emotions through a
-              documentary approach to wedding photography.
-            </p>
-          </div>
+        {/* Philosophy + Portfolio Integration */}
+        <div className="max-w-7xl mx-auto px-8 py-24">
+          {/* Integrated Philosophy + Portfolio Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center">
+            {/* Content */}
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl sm:text-4xl font-serif mb-8 text-gray-900">
+                While You Live It, I'll Capture It
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+                HELLO! I just want to say thank you for considering me to capture your special moments. 
+                It is my passion to tell your story through the lens of a camera. 
+                Just come as you are and I will do the rest of the work!
+              </p>
+              
+              {/* Dual call-to-action */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/portfolio/weddings"
+                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-gray-900 hover:bg-gray-800 transition-colors text-center"
+                >
+                  View Full Portfolio
+                </Link>
+                <Link
+                  to="/portfolio/weddings/albums"
+                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-gray-900 border border-gray-300 hover:border-gray-900 transition-colors text-center"
+                >
+                  Browse Albums
+                </Link>
+              </div>
+            </div>
 
-          {/* Simple two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Photo */}
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src="/images/grid/image1.jpg"
-                alt="Wedding Photography"
-                className="w-full h-full object-cover"
+            {/* Photo Carousel Showcase */}
+            <div className="lg:col-span-3">
+              <ImageCarousel
+                images={curatedHighlights}
+                autoPlay={true}
+                autoPlayInterval={4000}
               />
             </div>
-
-            {/* Content */}
-            <div className="lg:pt-8">
-              <h2 className="text-2xl font-serif mb-8 text-gray-900">
-                About the Work
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                I approach wedding photography differently—while others
-                orchestrate moments, I believe the best shots happen when you
-                forget I'm there. This is your day, and I'm here to document
-                every genuine emotion as it unfolds naturally.
-              </p>
-              <Link
-                to="/portfolio/weddings"
-                className="inline-block text-sm tracking-wide uppercase text-gray-900 border-b border-gray-300 hover:border-gray-900 transition-colors"
-              >
-                View Portfolio
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* Minimal portfolio preview */}
-        <div className="max-w-4xl mx-auto px-8 pb-24">
-          <div className="mb-12">
-            <ImageCarousel
-              images={curatedHighlights}
-              autoPlay={true}
-              autoPlayInterval={5000}
-            />
-          </div>
-        </div>
-
-        {/* Clean albums grid */}
+        {/* Recent Work Albums */}
         <div className="max-w-6xl mx-auto px-8 pb-24">
           <div className="text-center mb-16">
-            <h2 className="text-2xl font-serif text-gray-900 mb-4">
-              Recent Work
+            <h2 className="text-2xl sm:text-3xl font-serif text-gray-900 mb-4">
+              Wedding Albums
             </h2>
-            <p className="text-gray-600">Recent wedding albums</p>
+            <p className="text-sm sm:text-base text-gray-600">I had the honor of capturing these beautiful celebrations</p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {weddingAlbums.map((album, index) => (
               <Link
                 key={index}
@@ -148,6 +133,35 @@ const Home = () => {
                 </h3>
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* Client Testimonials */}
+        <div className="max-w-4xl mx-auto px-8 pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-serif text-gray-900 mb-8">
+              Kind Words
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="text-center">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 italic">
+                "Nadish captured our day exactly as it happened—no forced poses, just pure emotion. 
+                Looking at our photos feels like reliving every perfect moment."
+              </p>
+              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
+                — Sarah & Mike
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 italic">
+                "We barely noticed Nadish was there, but somehow he caught every meaningful glance 
+                and genuine smile. These photos tell our story better than we ever could."
+              </p>
+              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
+                — Priya & James
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PageWrapper from "../../../../components/PageWrapper";
 import PhotoGrid from "../../../../components/PhotoGrid";
 
-const WeddingDowntownLoft = () => {
+const WeddingSnehaAndAkshay = () => {
   const weddingImages = [
     "/images/grid/image13.jpg",
     "/images/grid/image14.jpg",
@@ -33,19 +33,19 @@ const WeddingDowntownLoft = () => {
 
           <div className="text-center mb-12">
             <h1 className="text-3xl font-serif font-semibold text-gray-600 mb-4">
-              Downtown Loft
+              Sneha & Akshay
             </h1>
             <p className="text-gray-600 text-lg  mb-2">
               Urban chic wedding with industrial charm
             </p>
             <p className="text-gray-600 ">
-              Industrial Loft, Houston
+              Industrial Loft, San Francisco
             </p>
           </div>
           
           <PhotoGrid 
             images={weddingImages}
-            galleryId="downtown-loft-wedding-gallery"
+            galleryId="sneha-akshay-wedding-gallery"
           />
         </div>
       </div>
@@ -53,4 +53,4 @@ const WeddingDowntownLoft = () => {
   );
 };
 
-export default WeddingDowntownLoft;
+export default WeddingSnehaAndAkshay;

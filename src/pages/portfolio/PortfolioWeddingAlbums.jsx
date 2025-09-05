@@ -3,32 +3,25 @@ import PageWrapper from "../../components/PageWrapper";
 
 const weddingAlbums = [
   { 
-    title: "Sarah & Mike", 
-    slug: "sarah-and-mike", 
+    title: "Aparna & Rahul", 
+    slug: "aparna-and-rahul", 
     cover: "/images/grid/image8.jpg",
     description: "Elegant garden ceremony with timeless romance",
-    venue: "Garden Venue, Houston"
+    venue: "Garden Venue, San Francisco"
   },
   { 
-    title: "Downtown Loft", 
-    slug: "downtown-loft", 
+    title: "Sneha & Akshay", 
+    slug: "sneha-and-akshay", 
     cover: "/images/grid/image9.jpg",
     description: "Urban chic wedding with industrial charm",
-    venue: "Industrial Loft, Houston"
+    venue: "Industrial Loft, San Francisco"
   },
   { 
-    title: "Fall Vineyard", 
-    slug: "fall-vineyard", 
+    title: "Florencia's Wedding Dress", 
+    slug: "florencias-wedding-dress", 
     cover: "/images/grid/image10.jpg",
-    description: "Autumn celebration among the vines",
-    venue: "Vineyard Estate, Texas Hill Country"
-  },
-  { 
-    title: "Garden Ceremony", 
-    slug: "garden-ceremony", 
-    cover: "/images/grid/image11.jpg",
-    description: "Intimate outdoor celebration in bloom",
-    venue: "Botanical Gardens, Houston"
+    description: "Elegant bridal details and timeless beauty",
+    venue: "Bridal Studio, San Francisco"
   },
 ];
 

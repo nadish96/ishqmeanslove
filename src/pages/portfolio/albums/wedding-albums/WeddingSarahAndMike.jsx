@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PageWrapper from "../../../../components/PageWrapper";
 import PhotoGrid from "../../../../components/PhotoGrid";
 
-const WeddingSarahAndMike = () => {
+const WeddingAparnaAndRahul = () => {
   const weddingImages = [
     "/images/grid/image1.jpg",
     "/images/grid/image2.jpg",
@@ -30,19 +30,19 @@ const WeddingSarahAndMike = () => {
               ← Back to Albums
             </Link>
             <h1 className="text-3xl font-serif text-gray-900 mb-4">
-              Sarah & Mike
+              Aparna & Rahul
             </h1>
             <p className="text-gray-600 mb-2">
               Elegant garden ceremony with timeless romance
             </p>
             <p className="text-gray-500 text-sm">
-              Garden Venue, Houston
+              Garden Venue, San Francisco
             </p>
           </div>
           
           <PhotoGrid 
             images={weddingImages}
-            galleryId="sarah-mike-wedding-gallery"
+            galleryId="aparna-rahul-wedding-gallery"
           />
         </div>
       </div>
@@ -50,4 +50,4 @@ const WeddingSarahAndMike = () => {
   );
 };
 
-export default WeddingSarahAndMike;
+export default WeddingAparnaAndRahul;

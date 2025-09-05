@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PageWrapper from "../../../../components/PageWrapper";
 import PhotoGrid from "../../../../components/PhotoGrid";
 
-const WeddingGardenCeremony = () => {
+const FlorenciaWeddingDress = () => {
   const weddingImages = [
     "/images/grid/image4.jpg",
     "/images/grid/image5.jpg",
@@ -33,19 +33,19 @@ const WeddingGardenCeremony = () => {
 
           <div className="text-center mb-12">
             <h1 className="text-3xl font-serif font-semibold text-gray-600 mb-4">
-              Garden Ceremony
+              Florencia's Wedding Dress
             </h1>
             <p className="text-gray-600 text-lg  mb-2">
-              Intimate outdoor celebration in bloom
+              Elegant bridal details and timeless beauty
             </p>
             <p className="text-gray-600 ">
-              Botanical Gardens, Houston
+              Bridal Studio, San Francisco
             </p>
           </div>
           
           <PhotoGrid 
             images={weddingImages}
-            galleryId="garden-ceremony-wedding-gallery"
+            galleryId="florencias-wedding-dress-gallery"
           />
         </div>
       </div>
@@ -53,4 +53,4 @@ const WeddingGardenCeremony = () => {
   );
 };
 
-export default WeddingGardenCeremony;
+export default FlorenciaWeddingDress;

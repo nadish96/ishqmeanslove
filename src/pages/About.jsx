@@ -17,10 +17,10 @@ const About = () => {
 
             {/* Content */}
             <div className="lg:pt-8">
-              <h1 className="text-3xl font-serif mb-8 text-gray-900">
+              <h1 className="text-3xl sm:text-4xl font-serif mb-8 text-gray-900">
                 About
               </h1>
-              <div className="space-y-6 text-gray-600 leading-relaxed">
+              <div className="space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
                 <p>
                   Hi, I'm Nadish. I approach wedding photography differently—while others orchestrate moments, I believe the best shots happen when you forget I'm there.
                 </p>

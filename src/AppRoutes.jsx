@@ -4,10 +4,9 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import PortfolioWeddings from "./pages/portfolio/PortfolioWeddings";
 import PortfolioWeddingAlbums from "./pages/portfolio/PortfolioWeddingAlbums";
-import WeddingSarahAndMike from "./pages/portfolio/albums/wedding-albums/WeddingSarahAndMike";
-import WeddingDowntownLoft from "./pages/portfolio/albums/wedding-albums/WeddingDowntownLoft";
-import WeddingFallVineyard from "./pages/portfolio/albums/wedding-albums/WeddingFallVineyard";
-import WeddingGardenCeremony from "./pages/portfolio/albums/wedding-albums/WeddingGardenCeremony";
+import WeddingAparnaAndRahul from "./pages/portfolio/albums/wedding-albums/WeddingSarahAndMike";
+import WeddingSnehaAndAkshay from "./pages/portfolio/albums/wedding-albums/WeddingDowntownLoft";
+import FlorenciaWeddingDress from "./pages/portfolio/albums/wedding-albums/WeddingGardenCeremony";
 import PortfolioArtists from "./pages/portfolio/PortfolioArtists";
 import PortfolioFamily from "./pages/portfolio/PortfolioFamily";
 import PortfolioBirthdays from "./pages/portfolio/PortfolioBirthdays";
@@ -30,14 +29,13 @@ const AppRoutes = () => {
               </Route>
               <Route path="album">
                 <Route
-                  path="sarah-and-mike"
-                  element={<WeddingSarahAndMike />}
+                  path="aparna-and-rahul"
+                  element={<WeddingAparnaAndRahul />}
                 />
-                <Route path="downtown-loft" element={<WeddingDowntownLoft />} />
-                <Route path="fall-vineyard" element={<WeddingFallVineyard />} />
+                <Route path="sneha-and-akshay" element={<WeddingSnehaAndAkshay />} />
                 <Route
-                  path="garden-ceremony"
-                  element={<WeddingGardenCeremony />}
+                  path="florencias-wedding-dress"
+                  element={<FlorenciaWeddingDress />}
                 />
               </Route>
             </Route>

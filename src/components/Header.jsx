@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "Portfolio", path: "/portfolio/weddings" },
@@ -22,15 +22,20 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
       {/* Minimal top bar */}
-      <div className="max-w-6xl mx-auto px-8 py-8 flex items-center justify-between">
-        {/* Left: Simple site title */}
+      <div className="max-w-6xl mx-auto px-8 py-6 flex items-center justify-between">
+        {/* Left: Site title with tagline */}
         <NavLink 
           to="/"
-          className="text-2xl font-serif text-gray-900 hover:text-gray-600 transition-colors"
+          className="block hover:opacity-80 transition-opacity"
         >
-          NADISH SOOD
+          <div className="text-2xl font-serif text-gray-900 tracking-wide">
+            RUMI HAS A CAMERA
+          </div>
+          <div className="text-xs text-gray-500 mt-1 tracking-wide">
+            EMOTIVE WEDDING PHOTOGRAPHY • BY <span className="text-gray-900">NADISH SOOD</span>
+          </div>
         </NavLink>
 
         {/* Right: Clean navigation (desktop) */}
@@ -54,7 +59,7 @@ const Header = () => {
                         key={subLink.path}
                         to={subLink.path}
                         className={({ isActive }) =>
-                          `block px-4 py-2 text-xs tracking-wide uppercase transition-colors ${
+                          `block px-4 py-2 text-sm tracking-wide uppercase transition-colors ${
                             isActive
                               ? "text-gray-900 bg-gray-50"
                               : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
@@ -134,10 +139,10 @@ const Header = () => {
                           setDropdownOpen(null);
                         }}
                         className={({ isActive }) =>
-                          `block text-xs tracking-wide uppercase transition-colors ${
+                          `block text-sm tracking-wide uppercase transition-colors ${
                             isActive
                               ? "text-gray-900"
-                              : "text-gray-500 hover:text-gray-900"
+                              : "text-gray-600 hover:text-gray-900"
                           }`
                         }
                       >
