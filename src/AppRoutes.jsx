@@ -3,10 +3,8 @@ import { AnimatePresence } from "framer-motion";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import PortfolioWeddings from "./pages/portfolio/PortfolioWeddings";
-import PortfolioWeddingAlbums from "./pages/portfolio/PortfolioWeddingAlbums";
-import WeddingAparnaAndRahul from "./pages/portfolio/albums/wedding-albums/WeddingSarahAndMike";
-import WeddingSnehaAndAkshay from "./pages/portfolio/albums/wedding-albums/WeddingDowntownLoft";
-import FlorenciaWeddingDress from "./pages/portfolio/albums/wedding-albums/WeddingGardenCeremony";
+import PortfolioWeddingBlogs from "./pages/portfolio/PortfolioWeddingBlogs";
+import DynamicWeddingBlog from "./pages/portfolio/blogs/DynamicWeddingBlog";
 import PortfolioArtists from "./pages/portfolio/PortfolioArtists";
 import PortfolioFamily from "./pages/portfolio/PortfolioFamily";
 import PortfolioBirthdays from "./pages/portfolio/PortfolioBirthdays";
@@ -24,20 +22,10 @@ const AppRoutes = () => {
           <Route path="portfolio">
             <Route path="weddings">
               <Route index element={<PortfolioWeddings />} />
-              <Route path="albums">
-                <Route index element={<PortfolioWeddingAlbums />} />
+              <Route path="blogs">
+                <Route index element={<PortfolioWeddingBlogs />} />
               </Route>
-              <Route path="album">
-                <Route
-                  path="aparna-and-rahul"
-                  element={<WeddingAparnaAndRahul />}
-                />
-                <Route path="sneha-and-akshay" element={<WeddingSnehaAndAkshay />} />
-                <Route
-                  path="florencias-wedding-dress"
-                  element={<FlorenciaWeddingDress />}
-                />
-              </Route>
+              <Route path="blog/:slug" element={<DynamicWeddingBlog />} />
             </Route>
             <Route path="artists" element={<PortfolioArtists />} />
             <Route path="family" element={<PortfolioFamily />} />

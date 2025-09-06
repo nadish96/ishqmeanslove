@@ -36,7 +36,7 @@ const curatedHighlights = [
   "/images/grid/image9.jpg",
 ];
 
-const weddingAlbums = [
+const weddingBlogs = [
   {
     title: "Aparna & Rahul",
     slug: "aparna-and-rahul",
@@ -87,10 +87,10 @@ const Home = () => {
                   View Full Portfolio
                 </Link>
                 <Link
-                  to="/portfolio/weddings/albums"
+                  to="/portfolio/weddings/blogs"
                   className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-gray-900 border border-gray-300 hover:border-gray-900 transition-colors text-center"
                 >
-                  Browse Albums
+                  Browse Blog
                 </Link>
               </div>
             </div>
@@ -106,30 +106,30 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Recent Work Albums */}
+        {/* Recent Work Blogs */}
         <div className="max-w-6xl mx-auto px-8 pb-24">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl font-serif text-gray-900 mb-4">
-              Wedding Albums
+              Wedding Blog
             </h2>
             <p className="text-sm sm:text-base text-gray-600">I had the honor of capturing these beautiful celebrations</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {weddingAlbums.map((album, index) => (
+            {weddingBlogs.map((blog, index) => (
               <Link
                 key={index}
-                to={`/portfolio/weddings/album/${album.slug}`}
+                to={`/portfolio/weddings/blog/${blog.slug}`}
                 className="block group"
               >
                 <div className="aspect-square overflow-hidden mb-3">
                   <img
-                    src={album.cover}
-                    alt={album.title}
+                    src={blog.cover}
+                    alt={blog.title}
                     className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
                   />
                 </div>
                 <h3 className="text-sm tracking-wide uppercase text-gray-600 group-hover:text-gray-900 transition-colors">
-                  {album.title}
+                  {blog.title}
                 </h3>
               </Link>
             ))}

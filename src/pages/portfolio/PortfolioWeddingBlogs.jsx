@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../../components/PageWrapper";
 
-const weddingAlbums = [
+const weddingBlogs = [
   { 
     title: "Aparna & Rahul", 
     slug: "aparna-and-rahul", 
@@ -25,7 +25,7 @@ const weddingAlbums = [
   },
 ];
 
-const PortfolioWeddingAlbums = () => {
+const PortfolioWeddingBlogs = () => {
   return (
     <PageWrapper>
       <div className="bg-white min-h-screen text-gray-900">
@@ -38,7 +38,7 @@ const PortfolioWeddingAlbums = () => {
               ← Back to Portfolio
             </Link>
             <h1 className="text-3xl font-serif text-gray-900 mb-6">
-              Wedding Albums
+              Wedding Blog
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Each wedding tells a unique love story. Explore these celebrations.
@@ -46,10 +46,10 @@ const PortfolioWeddingAlbums = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {weddingAlbums.map((wedding, index) => (
+            {weddingBlogs.map((wedding, index) => (
               <Link
                 key={index}
-                to={`/portfolio/weddings/album/${wedding.slug}`}
+                to={`/portfolio/weddings/blog/${wedding.slug}`}
                 className="group block"
               >
                 <div className="aspect-[4/3] overflow-hidden mb-4">
@@ -77,4 +77,4 @@ const PortfolioWeddingAlbums = () => {
   );
 };
 
-export default PortfolioWeddingAlbums;
+export default PortfolioWeddingBlogs;
