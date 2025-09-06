@@ -1,29 +1,8 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../../components/PageWrapper";
+import { getWeddingBlogs } from "../../lib/imageStore";
 
-const weddingBlogs = [
-  { 
-    title: "Aparna & Rahul", 
-    slug: "aparna-and-rahul", 
-    cover: "/images/grid/image8.jpg",
-    description: "Elegant garden ceremony with timeless romance",
-    venue: "Garden Venue, San Francisco"
-  },
-  { 
-    title: "Sneha & Akshay", 
-    slug: "sneha-and-akshay", 
-    cover: "/images/grid/image9.jpg",
-    description: "Urban chic wedding with industrial charm",
-    venue: "Industrial Loft, San Francisco"
-  },
-  { 
-    title: "Florencia's Wedding Dress", 
-    slug: "florencias-wedding-dress", 
-    cover: "/images/grid/image10.jpg",
-    description: "Elegant bridal details and timeless beauty",
-    venue: "Bridal Studio, San Francisco"
-  },
-];
+const weddingBlogs = getWeddingBlogs();
 
 const PortfolioWeddingBlogs = () => {
   return (

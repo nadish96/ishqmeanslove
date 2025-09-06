@@ -1,67 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import PageWrapper from '../../../components/PageWrapper';
 import PhotoGrid from '../../../components/PhotoGrid';
-
-// Blog metadata
-const blogData = {
-  'aparna-and-rahul': {
-    title: 'Aparna & Rahul',
-    description: 'Elegant garden ceremony with timeless romance',
-    venue: 'Garden Venue, San Francisco',
-    images: [
-      "/images/grid/image1.jpg",
-      "/images/grid/image2.jpg",
-      "/images/grid/image3.jpg",
-      "/images/grid/image4.jpg",
-      "/images/grid/image5.jpg",
-      "/images/grid/image6.jpg",
-      "/images/grid/image7.jpg",
-      "/images/grid/image8.jpg",
-      "/images/grid/image9.jpg",
-      "/images/grid/image10.jpg",
-      "/images/grid/image11.jpg",
-      "/images/grid/image12.jpg",
-    ]
-  },
-  'sneha-and-akshay': {
-    title: 'Sneha & Akshay',
-    description: 'Urban chic wedding with industrial charm',
-    venue: 'Industrial Loft, San Francisco',
-    images: [
-      "/images/grid/image13.jpg",
-      "/images/grid/image14.jpg",
-      "/images/grid/image15.jpg",
-      "/images/grid/image16.jpg",
-      "/images/grid/image17.jpg",
-      "/images/grid/image18.jpg",
-      "/images/grid/image19.jpg",
-      "/images/grid/image20.jpg",
-    ]
-  },
-  'florencias-wedding-dress': {
-    title: "Florencia's Wedding Dress",
-    description: 'Elegant bridal details and timeless beauty',
-    venue: 'Bridal Studio, San Francisco',
-    images: [
-      "/images/grid/image4.jpg",
-      "/images/grid/image5.jpg",
-      "/images/grid/image6.jpg",
-      "/images/grid/image7.jpg",
-      "/images/grid/image8.jpg",
-      "/images/grid/image9.jpg",
-      "/images/grid/image10.jpg",
-      "/images/grid/image11.jpg",
-      "/images/grid/image12.jpg",
-      "/images/grid/image13.jpg",
-      "/images/grid/image14.jpg",
-      "/images/grid/image15.jpg",
-    ]
-  }
-};
+import { getWeddingBlogBySlug } from '../../../lib/imageStore';
 
 const DynamicWeddingBlog = () => {
   const { slug } = useParams();
-  const blog = blogData[slug];
+  const blog = getWeddingBlogBySlug(slug);
 
   if (!blog) {
     return (

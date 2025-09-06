@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "assets:webp": "bash scripts/convert-to-webp.sh",
+    "assets:webp:dry": "bash scripts/convert-to-webp.sh --dry-run",
     "lint": "eslint .",
     "preview": "vite preview"
   },

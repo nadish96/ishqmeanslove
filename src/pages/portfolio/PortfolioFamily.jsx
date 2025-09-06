@@ -1,16 +1,8 @@
 import PageWrapper from "../../components/PageWrapper";
 import PhotoGrid from "../../components/PhotoGrid";
+import { getPortfolioCategory } from "../../lib/imageStore";
 
-const familyImages = [
-  "/images/grid/image17.jpg",
-  "/images/grid/image18.jpg",
-  "/images/grid/image19.jpg",
-  "/images/grid/image20.jpg",
-  "/images/grid/image21.jpg",
-  "/images/grid/image22.jpg",
-  "/images/grid/image23.jpg",
-  "/images/grid/image24.jpg",
-];
+const familyImages = getPortfolioCategory("family");
 
 const PortfolioFamily = () => {
   return (

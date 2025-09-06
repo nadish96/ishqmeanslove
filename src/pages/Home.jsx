@@ -2,57 +2,11 @@ import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import HeroImage from "../components/HeroImage";
 import ImageCarousel from "../components/ImageCarousel";
+import { getHeroImages, getHighlights, getWeddingBlogs } from "../lib/imageStore";
 
-const heroImages = [
-  "/images/hero.jpg",
-  "/images/grid/image1.jpg",
-  "/images/grid/image2.jpg",
-  "/images/grid/image3.jpg",
-  "/images/grid/image4.jpg",
-  "/images/grid/image5.jpg",
-  "/images/grid/image6.jpg",
-  "/images/grid/image7.jpg",
-  "/images/grid/image8.jpg",
-  "/images/grid/image9.jpg",
-  "/images/grid/image10.jpg",
-  "/images/grid/image11.jpg",
-  "/images/grid/image12.jpg",
-  "/images/grid/image13.jpg",
-  "/images/grid/image14.jpg",
-  "/images/grid/image15.jpg",
-  "/images/grid/image16.jpg",
-  "/images/grid/image17.jpg",
-  "/images/grid/image18.jpg",
-  "/images/grid/image19.jpg",
-  "/images/grid/image20.jpg"
-];
-
-const curatedHighlights = [
-  "/images/grid/image4.jpg",
-  "/images/grid/image5.jpg",
-  "/images/grid/image6.jpg",
-  "/images/grid/image7.jpg",
-  "/images/grid/image8.jpg",
-  "/images/grid/image9.jpg",
-];
-
-const weddingBlogs = [
-  {
-    title: "Aparna & Rahul",
-    slug: "aparna-and-rahul",
-    cover: "/images/grid/image8.jpg",
-  },
-  {
-    title: "Sneha & Akshay",
-    slug: "sneha-and-akshay",
-    cover: "/images/grid/image9.jpg",
-  },
-  {
-    title: "Florencia's Wedding Dress",
-    slug: "florencias-wedding-dress",
-    cover: "/images/grid/image10.jpg",
-  },
-];
+const heroImages = getHeroImages();
+const curatedHighlights = getHighlights();
+const weddingBlogs = getWeddingBlogs();
 
 const Home = () => {
   return (

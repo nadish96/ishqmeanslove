@@ -1,16 +1,8 @@
 import PageWrapper from "../../components/PageWrapper";
 import PhotoGrid from "../../components/PhotoGrid";
+import { getPortfolioCategory } from "../../lib/imageStore";
 
-const artistImages = [
-  "/images/grid/image9.jpg",
-  "/images/grid/image10.jpg",
-  "/images/grid/image11.jpg",
-  "/images/grid/image12.jpg",
-  "/images/grid/image13.jpg",
-  "/images/grid/image14.jpg",
-  "/images/grid/image15.jpg",
-  "/images/grid/image16.jpg",
-];
+const artistImages = getPortfolioCategory("artists");
 
 const PortfolioArtists = () => {
   return (
