@@ -47,6 +47,8 @@ const DynamicWeddingBlog = () => {
           <PhotoGrid 
             images={blog.images}
             galleryId={`${slug}-wedding-gallery`}
+            maxItemsPerRowWide={3}
+            wideBreakpoint={1024}
           />
         </div>
       </div>

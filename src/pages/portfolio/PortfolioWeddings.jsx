@@ -23,6 +23,8 @@ const PortfolioWeddings = () => {
           <PhotoGrid 
             images={weddingImages}
             galleryId="wedding-portfolio-gallery"
+            maxItemsPerRowWide={3}
+            wideBreakpoint={1024}
           />
 
           {/* Simple CTA */}

@@ -55,6 +55,7 @@ function layoutJustifiedWithFeatures(items, containerW, gap, config) {
     targetH = 320,
     featureRatio = 1.9,
     featureIndices = new Set(),
+    maxPerRow = Infinity,
   } = config;
 
   const rows = [];
@@ -77,7 +78,8 @@ function layoutJustifiedWithFeatures(items, containerW, gap, config) {
     }
 
     const testWidth = targetH * (rsum + r) + gap * row.length;
-    if (row.length && testWidth > containerW) {
+    const wouldExceedMax = row.length >= maxPerRow;
+    if (row.length && (testWidth > containerW || wouldExceedMax)) {
       rows.push({ type: "justify", items: row, isLast: false });
       row = [it];
       rsum = r;
@@ -156,6 +158,10 @@ export default function PhotoGrid({
   featureRatio = 1.9, // auto-feature very wide landscapes
   featureIndices = [], // force specific indices as solo rows
   centerLastRow = false, // optional: center the final row
+  // Control maximum items per row
+  maxItemsPerRow = Infinity,
+  maxItemsPerRowWide = null, // e.g., 3
+  wideBreakpoint = 1024, // px
 }) {
   // Ensure galleryId is a valid CSS id (avoid quotes, spaces, etc.)
   const gid = String(galleryId)
@@ -211,12 +217,15 @@ export default function PhotoGrid({
 
   const laidOutRows = useMemo(() => {
     if (!ready || !W) return [];
+    const effectiveMaxPerRow =
+      (W >= wideBreakpoint && maxItemsPerRowWide) ? maxItemsPerRowWide : maxItemsPerRow;
     return layoutJustifiedWithFeatures(items, W, gap, {
       targetH: targetRowHeight,
       featureRatio,
       featureIndices: new Set(featureIndices),
+      maxPerRow: effectiveMaxPerRow,
     });
-  }, [items, ready, W, gap, targetRowHeight, featureRatio, featureIndices]);
+  }, [items, ready, W, gap, targetRowHeight, featureRatio, featureIndices, maxItemsPerRow, maxItemsPerRowWide, wideBreakpoint]);
 
   return (
     <div ref={wrapRef} className="w-full mx-auto px-6" style={{ maxWidth }}>
