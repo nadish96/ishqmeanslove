@@ -14,7 +14,7 @@ const Home = () => {
       <div className="bg-white min-h-screen text-gray-900">
         {/* Hero Section with Carousel */}
         <div>
-          <HeroImage images={heroImages} alt="Nadish Sood Photography Hero" />
+          <HeroImage images={heroImages} alt="Nadish Sood Photography Hero" interval={3000} />
         </div>
 
         {/* Philosophy + Portfolio Integration */}
@@ -51,7 +51,14 @@ const Home = () => {
 
             {/* Highlights Strip (default) */}
             <div className="lg:col-span-3">
-              <StripGallery images={curatedHighlights.slice(0, 18)} rowHeight={320} gap={10} />
+              <StripGallery 
+                images={curatedHighlights.slice(0, 18)} 
+                rowHeight={320} 
+                gap={10}
+                mode="snap"
+                interval={2800}
+                autoPlay={true}
+              />
               <div className="mt-2 text-center">
                 <span className="text-xs tracking-wide uppercase text-gray-500 select-none">
                   Scroll to see more →

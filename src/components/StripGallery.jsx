@@ -10,6 +10,7 @@ export default function StripGallery({
   mode = "snap", // 'snap' | 'drift'
   interval = 3500, // for 'snap' mode
   speed = 0.04, // px per ms for 'drift'
+  duplicate = 2, // render multiple copies to ensure overflow for drift
 }) {
   const ref = useRef(null);
 
@@ -37,12 +38,14 @@ export default function StripGallery({
     let playing = false;
     let timer = null;
     let raf = null;
+    let isVisible = false;
 
     const getSnaps = () => Array.from(el.children).map((c) => c.offsetLeft);
 
     const playSnap = () => {
       if (timer) return;
       timer = setInterval(() => {
+        if (!isVisible) return;
         const snaps = getSnaps();
         if (!snaps.length) return;
         const x = el.scrollLeft;
@@ -58,10 +61,12 @@ export default function StripGallery({
       const step = (t) => {
         raf = requestAnimationFrame(step);
         const dt = t - last; last = t;
-        el.scrollLeft += speed * dt * 1000 * 0.001; // px/ms -> px/frame
-        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
-          el.scrollLeft = 0; // wrap
-        }
+        if (!isVisible) return;
+        const content = Math.max(0, el.scrollWidth - el.clientWidth);
+        if (content <= 0) return; // nothing to scroll
+        const dx = speed * dt; // px/ms * ms = px
+        const next = el.scrollLeft + dx;
+        el.scrollLeft = next >= content ? 0 : next;
       };
       raf = requestAnimationFrame(step);
     };
@@ -79,13 +84,14 @@ export default function StripGallery({
     };
 
     const onEnter = () => stop();
-    const onLeave = () => start();
+    const onLeave = () => { if (isVisible) start(); };
     const onPointerDown = () => stop();
     const onWheel = () => stop();
     const onVisibility = () => (document.hidden ? stop() : start());
 
     const io = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.25) start(); else stop();
+      isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+      if (isVisible) start(); else stop();
     }, { threshold: [0, 0.25, 1] });
 
     io.observe(el);
@@ -94,11 +100,6 @@ export default function StripGallery({
     el.addEventListener('pointerdown', onPointerDown);
     el.addEventListener('wheel', onWheel, { passive: true });
     document.addEventListener('visibilitychange', onVisibility);
-
-    // initial start if already in view
-    const rect = el.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
-    if (inView) start();
 
     return () => {
       stop();
@@ -121,8 +122,10 @@ export default function StripGallery({
         role="region"
         aria-label={ariaLabel}
       >
-        {images.map((src, i) => (
-          <div key={i} className="flex-none snap-start" style={{ height: rowHeight, marginRight: gap }}>
+        {Array.from({ length: Math.max(1, duplicate) })
+          .flatMap((_, d) => images.map((src, i) => ({ src, key: `${d}-${i}` })))
+          .map(({ src, key }, i) => (
+          <div key={key} className="flex-none snap-start" style={{ height: rowHeight, marginRight: gap }}>
             <img
               src={typeof src === "string" ? src : src.src}
               alt={typeof src === "string" ? `Highlight ${i + 1}` : src.alt || `Highlight ${i + 1}`}
