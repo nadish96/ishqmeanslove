@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import HeroImage from "../components/HeroImage";
-import ImageCarousel from "../components/ImageCarousel";
+import StripGallery from "../components/StripGallery";
 import { getHeroImages, getWeddingBlogs, getPortfolioCategory } from "../lib/imageStore";
 
 const heroImages = getHeroImages();
-// Use images from weddings portfolio for the homepage carousel
-const curatedHighlights = getPortfolioCategory('weddings').slice(0, 12);
+const curatedHighlights = getPortfolioCategory('weddings');
 const weddingBlogs = getWeddingBlogs();
 
 const Home = () => {
@@ -50,13 +49,14 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Photo Carousel Showcase */}
+            {/* Highlights Strip (default) */}
             <div className="lg:col-span-3">
-              <ImageCarousel
-                images={curatedHighlights}
-                autoPlay={true}
-                autoPlayInterval={4000}
-              />
+              <StripGallery images={curatedHighlights.slice(0, 18)} rowHeight={320} gap={10} />
+              <div className="mt-2 text-center">
+                <span className="text-xs tracking-wide uppercase text-gray-500 select-none">
+                  Scroll to see more →
+                </span>
+              </div>
             </div>
           </div>
         </div>
