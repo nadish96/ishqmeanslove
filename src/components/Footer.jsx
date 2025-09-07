@@ -1,18 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-900 text-white py-8 overflow-hidden">
-      {/* Background Image with Heavy Fade */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/grid/image3.jpg"
-          alt="Footer Background"
-          className="w-full h-full object-cover opacity-10"
-        />
-        <div className="absolute inset-0 bg-black/70" />
-      </div>
-
+    <footer className="relative bg-gray-900 text-white py-8">
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
         <div className="space-y-4">
           {/* Business Name */}
           <h3 className="text-2xl md:text-3xl font-serif font-semibold tracking-wide text-white">

@@ -137,6 +137,7 @@ export default function StripGallery({
           </div>
         ))}
       </div>
+      {/* Gradient affordance intentionally removed for now */}
     </div>
   );
 }
