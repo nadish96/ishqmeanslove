@@ -34,7 +34,10 @@ const Header = () => {
             RUMI HAS A CAMERA
           </div>
           <div className="text-xs text-gray-500 mt-1 tracking-wide">
-            EMOTIVE WEDDING PHOTOGRAPHY • BY <span className="text-gray-900">NADISH SOOD</span>
+            <span className="uppercase">EMOTIVE WEDDING PHOTOGRAPHY</span>
+            <span className="hidden sm:inline"> • </span>
+            <br className="sm:hidden" />
+            <span className="uppercase">BY <span className="text-gray-900">NADISH SOOD</span></span>
           </div>
         </NavLink>
 

@@ -23,7 +23,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center">
             {/* Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl sm:text-4xl font-serif mb-8 text-gray-900">
+              <h2 className="text-xl sm:text-4xl font-serif mb-8 text-gray-900 whitespace-nowrap">
                 While You Live It, I'll Capture It
               </h2>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
