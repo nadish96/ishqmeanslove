@@ -157,6 +157,10 @@ export default function PhotoGrid({
   featureIndices = [], // force specific indices as solo rows
   centerLastRow = false, // optional: center the final row
 }) {
+  // Ensure galleryId is a valid CSS id (avoid quotes, spaces, etc.)
+  const gid = String(galleryId)
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]/g, "-");
   const [items, setItems] = useState(() => normalizeImages(images));
   const [ready, setReady] = useState(false);
 
@@ -193,14 +197,14 @@ export default function PhotoGrid({
   useEffect(() => {
     if (!ready) return;
     const lightbox = new PhotoSwipeLightbox({
-      gallery: `#${galleryId}`,
+      gallery: `#${gid}`,
       children: "a",
       pswpModule: () => import("photoswipe"),
       showHideAnimationType: "fade",
     });
     lightbox.init();
     return () => lightbox.destroy();
-  }, [galleryId, ready]);
+  }, [gid, ready]);
 
   const wrapRef = useRef(null);
   const W = useContainerWidth(wrapRef);
@@ -216,7 +220,7 @@ export default function PhotoGrid({
 
   return (
     <div ref={wrapRef} className="w-full mx-auto px-6" style={{ maxWidth }}>
-      <div id={galleryId} className="flex flex-col" style={{ gap }}>
+      <div id={gid} className="flex flex-col" style={{ gap }}>
         {!ready && (
           <div className="text-center py-12 text-gray-500">Loading images…</div>
         )}
