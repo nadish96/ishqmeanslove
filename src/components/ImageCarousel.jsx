@@ -164,7 +164,7 @@ export default function ImageCarousel({
       {/* Arrows (parent has 'group' so hover works) */}
       <button
         onClick={scrollPrev}
-        disabled={!canPrev && !emblaApi?.options.loop}
+        disabled={!canPrev && !emblaApi?.options?.loop}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 disabled:opacity-40 text-white p-3 rounded-full transition-all opacity-0 group-hover:opacity-100 backdrop-blur-sm"
         aria-label="Previous image"
         type="button"
@@ -186,7 +186,7 @@ export default function ImageCarousel({
 
       <button
         onClick={scrollNext}
-        disabled={!canNext && !emblaApi?.options.loop}
+        disabled={!canNext && !emblaApi?.options?.loop}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 disabled:opacity-40 text-white p-3 rounded-full transition-all opacity-0 group-hover:opacity-100 backdrop-blur-sm"
         aria-label="Next image"
         type="button"

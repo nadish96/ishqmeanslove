@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import HeroImage from "../components/HeroImage";
 import ImageCarousel from "../components/ImageCarousel";
-import { getHeroImages, getHighlights, getWeddingBlogs } from "../lib/imageStore";
+import { getHeroImages, getWeddingBlogs, getPortfolioCategory } from "../lib/imageStore";
 
 const heroImages = getHeroImages();
-const curatedHighlights = getHighlights();
+// Use images from weddings portfolio for the homepage carousel
+const curatedHighlights = getPortfolioCategory('weddings').slice(0, 12);
 const weddingBlogs = getWeddingBlogs();
 
 const Home = () => {

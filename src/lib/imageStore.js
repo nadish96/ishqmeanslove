@@ -41,7 +41,7 @@ function titleCaseFromSlug(slug) {
 
 // -------------- HERO --------------
 export function getHeroImages() {
-  const hero = import.meta.glob('../assets/hero/*.{webp,webm,avif,jpg,jpeg,png}', { eager: true, import: "default" });
+  const hero = import.meta.glob('../assets/hero/*.{webp,WEBP,webm,WEBM,avif,AVIF,jpg,JPG,jpeg,JPEG,png,PNG}', { eager: true, import: "default" });
   const urls = toUrlMap(hero).map((x) => x.url);
   if (urls.length) return urls;
   return [
@@ -71,7 +71,7 @@ export function getHeroImages() {
 
 // -------------- HIGHLIGHTS --------------
 export function getHighlights() {
-  const highlights = import.meta.glob('../assets/highlights/*.{webp,webm,avif,jpg,jpeg,png}', { eager: true, import: "default" });
+  const highlights = import.meta.glob('../assets/highlights/*.{webp,WEBP,webm,WEBM,avif,AVIF,jpg,JPG,jpeg,JPEG,png,PNG}', { eager: true, import: "default" });
   const urls = toUrlMap(highlights).map((x) => x.url);
   if (urls.length) return urls;
   return [
@@ -87,7 +87,7 @@ export function getHighlights() {
 // -------------- PORTFOLIO (basic) --------------
 export function getPortfolioCategory(category) {
   // Vite requires a static pattern; glob all and filter by folder name
-  const all = import.meta.glob('../assets/portfolios/*/*.{webp,webm,avif,jpg,jpeg,png}', { eager: true, import: "default" });
+  const all = import.meta.glob('../assets/portfolios/*/*.{webp,WEBP,webm,WEBM,avif,AVIF,jpg,JPG,jpeg,JPEG,png,PNG}', { eager: true, import: "default" });
   const urls = Object.keys(all)
     .filter((p) => p.includes(`/portfolios/${category}/`))
     .sort(naturalSort)
@@ -152,7 +152,7 @@ export function getPortfolioCategory(category) {
 
 // -------------- PORTFOLIO (with meta) --------------
 export function getPortfolioCategories() {
-  const imgModules = import.meta.glob('../assets/portfolios/*/*.{webp,webm,avif,jpg,jpeg,png}', { eager: true, import: "default" });
+  const imgModules = import.meta.glob('../assets/portfolios/*/*.{webp,WEBP,webm,WEBM,avif,AVIF,jpg,JPG,jpeg,JPEG,png,PNG}', { eager: true, import: "default" });
   const metaModules = import.meta.glob(`../assets/portfolios/*/meta.json`, { eager: true, import: "default" });
 
   const byCat = new Map();
@@ -198,7 +198,7 @@ export function getPortfolioCategoryWithMeta(category) {
 
 // -------------- WEDDING BLOGS --------------
 export function getWeddingBlogs() {
-  const imgModules = import.meta.glob('../assets/blogs/weddings/*/*.{webp,webm,avif,jpg,jpeg,png}', { eager: true, import: "default" });
+  const imgModules = import.meta.glob('../assets/blogs/weddings/*/*.{webp,WEBP,webm,WEBM,avif,AVIF,jpg,JPG,jpeg,JPEG,png,PNG}', { eager: true, import: "default" });
   const metaModules = import.meta.glob(`../assets/blogs/weddings/*/meta.json`, { eager: true, import: "default" });
 
   const bySlug = new Map();
