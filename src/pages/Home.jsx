@@ -32,19 +32,13 @@ const Home = () => {
                 Just come as you are and I will do the rest of the work!
               </p>
               
-              {/* Dual call-to-action */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Primary call-to-action (desktop) */}
+              <div className="hidden lg:flex gap-4">
                 <Link
                   to="/portfolio/weddings"
                   className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-gray-900 hover:bg-gray-800 transition-colors text-center"
                 >
                   View Full Portfolio
-                </Link>
-                <Link
-                  to="/portfolio/weddings/blogs"
-                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-gray-900 border border-gray-300 hover:border-gray-900 transition-colors text-center"
-                >
-                  Browse Blog
                 </Link>
               </div>
             </div>
@@ -63,6 +57,15 @@ const Home = () => {
                 <span className="text-xs tracking-wide uppercase text-gray-500 select-none">
                   Scroll to see more →
                 </span>
+              </div>
+              {/* Mobile-only CTA placed below the strip */}
+              <div className="mt-4 flex lg:hidden justify-center">
+                <Link
+                  to="/portfolio/weddings"
+                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-gray-900 hover:bg-gray-800 transition-colors text-center"
+                >
+                  View Full Portfolio
+                </Link>
               </div>
             </div>
           </div>
@@ -87,7 +90,7 @@ const Home = () => {
                   <img
                     src={blog.cover}
                     alt={blog.title}
-                    className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                    className="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity"
                   />
                 </div>
                 <h3 className="text-sm tracking-wide uppercase text-gray-600 group-hover:text-gray-900 transition-colors">

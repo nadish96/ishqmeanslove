@@ -35,7 +35,7 @@ const PortfolioWeddingBlogs = () => {
                   <img
                     src={wedding.cover}
                     alt={wedding.title}
-                    className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
+                    className="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity"
                   />
                 </div>
                 <h3 className="text-xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors mb-2">
