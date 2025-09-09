@@ -17,57 +17,42 @@ const Home = () => {
           <HeroImage images={heroImages} alt="ishqmeanslove Hero" interval={3000} />
         </div>
 
-        {/* Philosophy + Portfolio Integration */}
+        {/* Intro copy (full-width section) */}
         <div className="max-w-7xl mx-auto px-8 py-24">
-          {/* Integrated Philosophy + Portfolio Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center">
-            {/* Content */}
-            <div className="lg:col-span-2">
-              <h2 className="text-xl sm:text-4xl font-heading mb-2 text-gray-900 whitespace-nowrap">
-                While You Live It, I'll Capture It
-              </h2>
-              <div className="h-px w-12 bg-gold/60 mb-6" />
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-                HELLO! I just want to say thank you for considering me to capture your special moments. 
-                It is my passion to tell your story through the lens of a camera. 
-                Just come as you are and I will do the rest of the work!
-              </p>
-              
-              {/* Primary call-to-action (desktop) */}
-              <div className="hidden lg:flex gap-4">
-                <Link
-                  to="/portfolio/weddings"
-                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-clay hover:bg-clay/90 transition-colors text-center"
-                >
-                  View Full Portfolio
-                </Link>
-              </div>
-            </div>
-
-            {/* Highlights Strip (default) */}
-            <div className="lg:col-span-3">
-              <StripGallery 
-                images={curatedHighlights.slice(0, 18)} 
-                rowHeight={320} 
-                gap={10}
-                mode="snap"
-                interval={2800}
-                autoPlay={true}
-              />
-              <div className="mt-2 text-center">
-                <span className="text-xs tracking-wide uppercase text-gray-500 select-none">
-                  Scroll to see more →
-                </span>
-              </div>
-              {/* Mobile-only CTA placed below the strip */}
-              <div className="mt-4 flex lg:hidden justify-center">
-                <Link
-                  to="/portfolio/weddings"
-                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-clay hover:bg-clay/90 transition-colors text-center"
-                >
-                  View Full Portfolio
-                </Link>
-              </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-xl sm:text-4xl font-heading mb-2 text-gray-900">
+              While You Live It, I'll Capture It
+            </h2>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+              HELLO! I just want to say thank you for considering me to capture your special moments.
+              It is my passion to tell your story through the lens of a camera.
+              Just come as you are and I will do the rest of the work!
+            </p>
+            {/* CTA moved below the highlights strip */}
+          </div>
+          {/* Highlights strip (full-width within container) */}
+          <div className="mt-12">
+            <StripGallery
+              images={curatedHighlights.slice(0, 18)}
+              rowHeight={500}
+              gap={10}
+              mode="snap"
+              interval={3000}
+              autoPlay={true}
+              single={true}
+              duplicate={1}
+              landscapeOnly={true}
+              landscapeRatio={1.3}
+            />
+            
+            <div className="mt-6 flex justify-center">
+              <Link
+                to="/portfolio/weddings"
+                className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-clay hover:bg-clay/90 transition-colors text-center"
+              >
+                View Full Portfolio
+              </Link>
             </div>
           </div>
         </div>

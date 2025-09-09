@@ -1,5 +1,5 @@
 // src/components/StripGallery.jsx
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function StripGallery({
   images = [],
@@ -11,8 +11,54 @@ export default function StripGallery({
   interval = 3500, // for 'snap' mode
   speed = 0.04, // px per ms for 'drift'
   duplicate = 2, // render multiple copies to ensure overflow for drift
+  single = false, // show one image per view (full-width slide)
+  landscapeOnly = false, // filter to landscape images only
+  landscapeRatio = 1.3, // width/height threshold for landscape
 }) {
   const ref = useRef(null);
+  const [displayImages, setDisplayImages] = useState([]);
+
+  // Probe natural image sizes at runtime
+  function probeSize(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+      img.onerror = reject;
+      img.src = typeof src === 'string' ? src : src?.src || src;
+    });
+  }
+
+  useEffect(() => {
+    let cancelled = false;
+    const run = async () => {
+      try {
+        if (!landscapeOnly) {
+          if (!cancelled) setDisplayImages(images);
+          return;
+        }
+        const probed = await Promise.all(
+          images.map(async (src) => {
+            try {
+              const { w, h } = await probeSize(src);
+              return { src, ratio: w / h };
+            } catch (_) {
+              return { src, ratio: 0 };
+            }
+          })
+        );
+        let filtered = probed.filter((p) => p.ratio >= landscapeRatio).map((p) => p.src);
+        if (filtered.length === 0) {
+          filtered = probed.filter((p) => p.ratio > 1.0).map((p) => p.src);
+        }
+        if (!cancelled) setDisplayImages(filtered.length ? filtered : images);
+      } catch (_) {
+        if (!cancelled) setDisplayImages(images);
+      }
+    };
+    run();
+    return () => { cancelled = true; };
+  }, [images, landscapeOnly, landscapeRatio]);
 
   useEffect(() => {
     const el = ref.current;
@@ -29,7 +75,7 @@ export default function StripGallery({
   // Autoplay: snap to next or drift, with pause-on-hover/interaction/visibility, only when in view
   useEffect(() => {
     const el = ref.current;
-    if (!el || !autoPlay || images.length === 0) return;
+    if (!el || !autoPlay || displayImages.length === 0) return;
 
     // Respect reduced motion
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -110,26 +156,54 @@ export default function StripGallery({
       el.removeEventListener('wheel', onWheel);
       document.removeEventListener('visibilitychange', onVisibility);
     };
-  }, [autoPlay, mode, interval, speed, images.length]);
+  }, [autoPlay, mode, interval, speed, displayImages.length]);
+
+  const scrollToNext = () => {
+    const el = ref.current;
+    if (!el) return;
+    const snaps = Array.from(el.children).map((c) => c.offsetLeft);
+    if (!snaps.length) return;
+    const x = el.scrollLeft;
+    const next = snaps.find((s) => s > x + 1);
+    const target = typeof next === 'number' ? next : 0;
+    el.scrollTo({ left: target, behavior: 'smooth' });
+  };
+
+  const scrollToPrev = () => {
+    const el = ref.current;
+    if (!el) return;
+    const snaps = Array.from(el.children).map((c) => c.offsetLeft);
+    if (!snaps.length) return;
+    const x = el.scrollLeft;
+    const prev = [...snaps].reverse().find((s) => s < x - 1);
+    const target = typeof prev === 'number' ? prev : snaps[snaps.length - 1];
+    el.scrollTo({ left: target, behavior: 'smooth' });
+  };
+
+  const showArrows = (displayImages?.length || 0) > 1;
 
   return (
     <div className="relative">
       <div
         ref={ref}
         className="w-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth"
-        style={{ gap, display: "flex", paddingBottom: 6 }}
+        style={{ gap: single ? 0 : gap, display: "flex", paddingBottom: 6 }}
         tabIndex={0}
         role="region"
         aria-label={ariaLabel}
       >
-        {Array.from({ length: Math.max(1, duplicate) })
-          .flatMap((_, d) => images.map((src, i) => ({ src, key: `${d}-${i}` })))
+        {Array.from({ length: Math.max(1, single ? 1 : duplicate) })
+          .flatMap((_, d) => displayImages.map((src, i) => ({ src, key: `${d}-${i}` })))
           .map(({ src, key }, i) => (
-          <div key={key} className="flex-none snap-start" style={{ height: rowHeight, marginRight: gap }}>
+          <div
+            key={key}
+            className="flex-none snap-start"
+            style={{ height: rowHeight, marginRight: single ? 0 : gap, width: single ? '100%' : 'auto' }}
+          >
             <img
               src={typeof src === "string" ? src : src.src}
               alt={typeof src === "string" ? `Highlight ${i + 1}` : src.alt || `Highlight ${i + 1}`}
-              className="h-full w-auto object-contain block"
+              className="h-full w-auto object-contain block mx-auto"
               loading="lazy"
               decoding="async"
               draggable={false}
@@ -137,7 +211,31 @@ export default function StripGallery({
           </div>
         ))}
       </div>
-      {/* Gradient affordance intentionally removed for now */}
+      {/* Arrow controls */}
+      {showArrows && (
+        <>
+          <button
+            type="button"
+            aria-label="Previous"
+            onClick={scrollToPrev}
+            className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/60"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            aria-label="Next"
+            onClick={scrollToNext}
+            className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/60"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
     </div>
   );
 }
