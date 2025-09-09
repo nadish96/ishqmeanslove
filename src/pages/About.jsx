@@ -3,14 +3,15 @@ import PageWrapper from "../components/PageWrapper";
 const About = () => {
   return (
     <PageWrapper>
-      <div className="bg-white min-h-screen text-gray-900">
+      <div className="bg-white min-h-screen text-ink">
         <div className="max-w-4xl mx-auto px-8 py-16">
           <div className="grid grid-cols-1 gap-16 items-start">
             {/* Content */}
             <div>
-              <h1 className="text-3xl sm:text-4xl font-serif mb-8 text-gray-900">
+              <h1 className="text-3xl sm:text-4xl font-heading mb-2 text-gray-900">
                 About
               </h1>
+              <div className="h-px w-12 bg-gold/60 mb-8" />
               <div className="space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
                 <p>
                   Hi, I'm Nadish. I approach wedding photography differently—while others orchestrate moments, I believe the best shots happen when you forget I'm there.

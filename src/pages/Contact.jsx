@@ -3,11 +3,12 @@ import PageWrapper from "../components/PageWrapper";
 const Contact = () => {
   return (
     <PageWrapper>
-      <div className="bg-white min-h-screen text-gray-900">
+      <div className="bg-white min-h-screen text-ink">
         <div className="max-w-2xl mx-auto px-8 py-16 text-center">
-          <h1 className="text-3xl sm:text-4xl font-serif mb-8 text-gray-900">
+          <h1 className="text-3xl sm:text-4xl font-heading mb-2 text-gray-900">
             Contact
           </h1>
+          <div className="h-px w-12 bg-gold/60 mx-auto mb-8" />
           <div className="space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
             <p>
               Whether you're planning a wedding, a portrait session, or just want to say hello — I'd love to hear from you.
@@ -22,7 +23,7 @@ const Contact = () => {
                   href="https://www.instagram.com/nadishsood"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-900 border-b border-gray-300 hover:border-gray-900 transition-colors"
+                  className="text-ink border-b border-gray-300 hover:text-clay hover:border-clay transition-colors"
                 >
                   @nadishsood
                 </a>

@@ -72,9 +72,9 @@ const HeroImage = ({ images = [], alt = "Hero Image", interval = 5000, landscape
     return (
       <div className="relative w-full h-screen overflow-hidden bg-gray-200">
         {/* Loading placeholder */}
-        <div className="absolute inset-0 bg-black/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-10" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-8">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white mb-4">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading text-white mb-4">
             For People in Love
           </h1>
           <p className="text-sm md:text-base tracking-widest uppercase text-white/90">
@@ -102,12 +102,12 @@ const HeroImage = ({ images = [], alt = "Hero Image", interval = 5000, landscape
         </div>
       ))}
 
-      {/* Minimal overlay */}
-      <div className="absolute inset-0 bg-black/20 z-10" />
+      {/* Gradient overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-10" />
 
       {/* Simple hero text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-8">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading text-white mb-4">
           For People in Love
         </h1>
         <p className="text-sm md:text-base tracking-widest uppercase text-white/90">

@@ -11,10 +11,10 @@ const weddingBlogs = getWeddingBlogs();
 const Home = () => {
   return (
     <PageWrapper>
-      <div className="bg-white min-h-screen text-gray-900">
+      <div className="bg-white min-h-screen text-ink">
         {/* Hero Section with Carousel */}
         <div>
-          <HeroImage images={heroImages} alt="Nadish Sood Photography Hero" interval={3000} />
+          <HeroImage images={heroImages} alt="ishqmeanslove Hero" interval={3000} />
         </div>
 
         {/* Philosophy + Portfolio Integration */}
@@ -23,9 +23,10 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 items-center">
             {/* Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-xl sm:text-4xl font-serif mb-8 text-gray-900 whitespace-nowrap">
+              <h2 className="text-xl sm:text-4xl font-heading mb-2 text-gray-900 whitespace-nowrap">
                 While You Live It, I'll Capture It
               </h2>
+              <div className="h-px w-12 bg-gold/60 mb-6" />
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
                 HELLO! I just want to say thank you for considering me to capture your special moments. 
                 It is my passion to tell your story through the lens of a camera. 
@@ -36,7 +37,7 @@ const Home = () => {
               <div className="hidden lg:flex gap-4">
                 <Link
                   to="/portfolio/weddings"
-                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-gray-900 hover:bg-gray-800 transition-colors text-center"
+                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-clay hover:bg-clay/90 transition-colors text-center"
                 >
                   View Full Portfolio
                 </Link>
@@ -62,7 +63,7 @@ const Home = () => {
               <div className="mt-4 flex lg:hidden justify-center">
                 <Link
                   to="/portfolio/weddings"
-                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-gray-900 hover:bg-gray-800 transition-colors text-center"
+                  className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-clay hover:bg-clay/90 transition-colors text-center"
                 >
                   View Full Portfolio
                 </Link>
@@ -74,9 +75,10 @@ const Home = () => {
         {/* Recent Work Blogs */}
         <div className="max-w-6xl mx-auto px-8 pb-24">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl font-serif text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-heading text-gray-900 mb-2">
               Wedding Blog
             </h2>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-4" />
             <p className="text-sm sm:text-base text-gray-600">I had the honor of capturing these beautiful celebrations</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -93,7 +95,7 @@ const Home = () => {
                     className="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity"
                   />
                 </div>
-                <h3 className="text-sm tracking-wide uppercase text-gray-600 group-hover:text-gray-900 transition-colors">
+                <h3 className="text-sm tracking-wide uppercase text-gray-600 group-hover:text-clay transition-colors">
                   {blog.title}
                 </h3>
               </Link>
@@ -104,9 +106,10 @@ const Home = () => {
         {/* Client Testimonials */}
         <div className="max-w-4xl mx-auto px-8 pb-24">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-serif text-gray-900 mb-8">
+            <h2 className="text-2xl sm:text-3xl font-heading text-gray-900 mb-2">
               Kind Words
             </h2>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="text-center">

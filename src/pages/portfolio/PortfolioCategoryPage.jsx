@@ -13,12 +13,13 @@ export default function PortfolioCategoryPage({
 
   return (
     <PageWrapper>
-      <div className="bg-white min-h-screen text-gray-900">
+      <div className="bg-white min-h-screen text-ink">
         <div className="max-w-6xl mx-auto px-8 py-16">
           <div className="text-center mb-16">
-            <h1 className="text-3xl font-serif text-gray-900 mb-6">
+            <h1 className="text-3xl font-heading text-gray-900 mb-2">
               {title}
             </h1>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
             {description && (
               <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 {description}
@@ -37,4 +38,3 @@ export default function PortfolioCategoryPage({
     </PageWrapper>
   );
 }
-

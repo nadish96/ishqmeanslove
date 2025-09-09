@@ -7,18 +7,19 @@ const weddingBlogs = getWeddingBlogs();
 const PortfolioWeddingBlogs = () => {
   return (
     <PageWrapper>
-      <div className="bg-white min-h-screen text-gray-900">
+      <div className="bg-white min-h-screen text-ink">
         <div className="max-w-6xl mx-auto px-8 py-16">
           <div className="text-center mb-16">
             <Link
               to="/portfolio/weddings"
-              className="inline-block text-sm tracking-wide uppercase text-gray-600 hover:text-gray-900 transition-colors mb-8"
+              className="inline-block text-sm tracking-wide uppercase text-gray-600 hover:text-clay transition-colors mb-8"
             >
               ← Back to Portfolio
             </Link>
-            <h1 className="text-3xl font-serif text-gray-900 mb-6">
+            <h1 className="text-3xl font-heading text-gray-900 mb-2">
               Wedding Blog
             </h1>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Each wedding tells a unique love story. Explore these celebrations.
             </p>
@@ -38,7 +39,7 @@ const PortfolioWeddingBlogs = () => {
                     className="w-full h-full object-cover object-top group-hover:opacity-90 transition-opacity"
                   />
                 </div>
-                <h3 className="text-xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors mb-2">
+                <h3 className="text-xl font-heading text-gray-900 group-hover:text-clay transition-colors mb-2">
                   {wedding.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-1">

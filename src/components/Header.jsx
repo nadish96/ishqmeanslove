@@ -30,14 +30,14 @@ const Header = () => {
           to="/"
           className="block hover:opacity-80 transition-opacity"
         >
-          <div className="text-2xl font-serif text-gray-900 tracking-wide">
-            RUMI HAS A CAMERA
+          <div className="text-2xl font-heading text-ink tracking-[0.08em] font-semibold">
+            ISHQ MEANS LOVE
           </div>
-          <div className="text-xs text-gray-500 mt-1 tracking-wide">
+          <div className="text-xs text-ink/60 mt-1 tracking-wide">
             <span className="uppercase">EMOTIVE WEDDING PHOTOGRAPHY</span>
             <span className="hidden sm:inline"> • </span>
             <br className="sm:hidden" />
-            <span className="uppercase">BY <span className="text-gray-900">NADISH SOOD</span></span>
+            <span className="uppercase">BY <span className="text-ink">NADISH SOOD</span></span>
           </div>
         </NavLink>
 
@@ -49,7 +49,7 @@ const Header = () => {
                 <>
                   {/* Minimal dropdown parent */}
                   <button
-                    className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors uppercase"
+                    className="text-sm tracking-wide text-gray-600 hover:text-clay transition-colors uppercase"
                     onClick={(e) => e.preventDefault()}
                   >
                     {link.label}
@@ -64,8 +64,8 @@ const Header = () => {
                         className={({ isActive }) =>
                           `block px-4 py-2 text-sm tracking-wide uppercase transition-colors ${
                             isActive
-                              ? "text-gray-900 bg-gray-50"
-                              : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                              ? "text-ink bg-gray-50"
+                              : "text-gray-600 hover:text-clay hover:bg-gray-50"
                           }`
                         }
                       >
@@ -80,8 +80,8 @@ const Header = () => {
                   className={({ isActive }) =>
                     `text-sm tracking-wide uppercase transition-colors ${
                       isActive
-                        ? "text-gray-900 border-b border-gray-300"
-                        : "text-gray-600 hover:text-gray-900"
+                        ? "text-ink border-b border-gray-300"
+                        : "text-gray-600 hover:text-clay"
                     }`
                   }
                 >
@@ -94,7 +94,7 @@ const Header = () => {
 
         {/* Simple mobile menu button */}
         <button
-          className="block md:hidden text-gray-600 hover:text-gray-900 transition-colors"
+          className="block md:hidden text-gray-600 hover:text-clay transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -122,7 +122,7 @@ const Header = () => {
                         dropdownOpen === link.label ? null : link.label
                       )
                     }
-                    className="text-sm tracking-wide uppercase text-gray-600 hover:text-gray-900 transition-colors block w-full text-left"
+                    className="text-sm tracking-wide uppercase text-gray-600 hover:text-clay transition-colors block w-full text-left"
                   >
                     {link.label}
                   </button>
@@ -144,8 +144,8 @@ const Header = () => {
                         className={({ isActive }) =>
                           `block text-sm tracking-wide uppercase transition-colors ${
                             isActive
-                              ? "text-gray-900"
-                              : "text-gray-600 hover:text-gray-900"
+                              ? "text-ink"
+                              : "text-gray-600 hover:text-clay"
                           }`
                         }
                       >
@@ -161,8 +161,8 @@ const Header = () => {
                   className={({ isActive }) =>
                     `block text-sm tracking-wide uppercase transition-colors ${
                       isActive
-                        ? "text-gray-900"
-                        : "text-gray-600 hover:text-gray-900"
+                        ? "text-ink"
+                        : "text-gray-600 hover:text-clay"
                     }`
                   }
                 >
