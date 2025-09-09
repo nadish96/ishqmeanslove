@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import HeroImage from "../components/HeroImage";
-import StripGallery from "../components/StripGallery";
-import { getHeroImages, getWeddingBlogs, getPortfolioCategory } from "../lib/imageStore";
+import PhotoGrid from "../components/PhotoGrid";
+import {
+  getHeroImages,
+  getWeddingBlogs,
+  getHighlights,
+} from "../lib/imageStore";
 
 const heroImages = getHeroImages();
-const curatedHighlights = getPortfolioCategory('weddings');
+const highlights = getHighlights();
 const weddingBlogs = getWeddingBlogs();
 
 const Home = () => {
@@ -14,38 +18,46 @@ const Home = () => {
       <div className="bg-white min-h-screen text-ink">
         {/* Hero Section with Carousel */}
         <div>
-          <HeroImage images={heroImages} alt="ishqmeanslove Hero" interval={3000} />
+          <HeroImage
+            images={heroImages}
+            alt="ishqmeanslove Hero"
+            interval={3000}
+          />
         </div>
 
         {/* Intro copy (full-width section) */}
         <div className="max-w-7xl mx-auto px-8 py-24">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-xl sm:text-4xl font-heading mb-2 text-gray-900">
-              While You Live It, I'll Capture It
+              THIS IS MY LIFE’S WORK
             </h2>
             <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
-              HELLO! I just want to say thank you for considering me to capture your special moments.
-              It is my passion to tell your story through the lens of a camera.
-              Just come as you are and I will do the rest of the work!
+            <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4">
+              I photograph the unrepeatable, the moments you’ll want to hold
+              onto when the noise fades. I’ll be there before the room fills,
+              I’ll stay when the last song plays, and I’ll notice the quiet
+              gestures most people miss.
+            </p>
+            <p className="text-base sm:text-lg text-ink/80 leading-relaxed">
+              My promise is presence, patience, and photographs built to be
+              lived with.
+            </p>
+            <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-8">
+              Photographs that tell your story through eternity.
             </p>
             {/* CTA moved below the highlights strip */}
           </div>
-          {/* Highlights strip (full-width within container) */}
+          {/* Curated highlights grid (full-width within container) */}
           <div className="mt-12">
-            <StripGallery
-              images={curatedHighlights.slice(0, 18)}
-              rowHeight={500}
-              gap={10}
-              mode="snap"
-              interval={3000}
-              autoPlay={true}
-              single={true}
-              duplicate={1}
-              landscapeOnly={true}
-              landscapeRatio={1.3}
+            <PhotoGrid
+              images={highlights.slice(0, 12)}
+              galleryId="home-highlights"
+              targetRowHeight={320}
+              maxItemsPerRowWide={3}
+              wideBreakpoint={1024}
+              centerLastRow={true}
             />
-            
+
             <div className="mt-6 flex justify-center">
               <Link
                 to="/portfolio/weddings"
@@ -64,7 +76,9 @@ const Home = () => {
               Wedding Blog
             </h2>
             <div className="h-px w-12 bg-gold/60 mx-auto mb-4" />
-            <p className="text-sm sm:text-base text-gray-600">I had the honor of capturing these beautiful celebrations</p>
+            <p className="text-sm sm:text-base text-ink/80">
+              I had the honor of capturing these beautiful celebrations
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {weddingBlogs.map((blog, index) => (
@@ -98,20 +112,22 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="text-center">
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 italic">
-                "Nadish captured our day exactly as it happened—no forced poses, just pure emotion. 
-                Looking at our photos feels like reliving every perfect moment."
+              <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4 italic">
+                "Nadish captured our day exactly as it happened—no forced poses,
+                just pure emotion. Looking at our photos feels like reliving
+                every perfect moment."
               </p>
-              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
+              <p className="text-xs sm:text-sm text-ink/60 uppercase tracking-wide">
                 — Sarah & Mike
               </p>
             </div>
             <div className="text-center">
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 italic">
-                "We barely noticed Nadish was there, but somehow he caught every meaningful glance 
-                and genuine smile. These photos tell our story better than we ever could."
+              <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4 italic">
+                "We barely noticed Nadish was there, but somehow he caught every
+                meaningful glance and genuine smile. These photos tell our story
+                better than we ever could."
               </p>
-              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
+              <p className="text-xs sm:text-sm text-ink/60 uppercase tracking-wide">
                 — Priya & James
               </p>
             </div>

@@ -15,7 +15,7 @@ const PortfolioWeddings = () => {
               Wedding Portfolio
             </h1>
             <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-ink/80 max-w-2xl mx-auto leading-relaxed">
               A collection of moments from celebrations I've had the privilege to document.
             </p>
             

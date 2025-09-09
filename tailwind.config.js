@@ -11,7 +11,7 @@ export default {
       },
       fontFamily: {
         'heading': ['Cormorant Garamond', 'serif'],
-        'body': ['Source Sans Pro', 'sans-serif'],
+        'body': ['Newsreader', 'serif'],
         // Keep original options for easy switching
         'alt-heading': ['Cormorant Garamond', 'serif'],
         'alt-body': ['Source Sans Pro', 'sans-serif'],

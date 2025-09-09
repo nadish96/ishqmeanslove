@@ -90,6 +90,8 @@ function layoutJustifiedWithFeatures(items, containerW, gap, config) {
   }
   if (row.length) rows.push({ type: "justify", items: row, isLast: true });
 
+  // (No last-row balancing; leave the last row as-is to avoid stretching)
+
   // Size rows
   const out = rows.map((rData, idx) => {
     const arr = rData.items;
@@ -116,7 +118,7 @@ function layoutJustifiedWithFeatures(items, containerW, gap, config) {
     const rowW = containerW - gap * (arr.length - 1);
     const sumR = arr.reduce((a, x) => a + x.w / x.h, 0);
     const rowH = rData.isLast
-      ? Math.min(targetH, Math.round(rowW / sumR)) // don't stretch last row
+      ? Math.round(rowW / sumR) // allow last row to expand; no min cap
       : Math.round(rowW / sumR);
 
     if (rData.isLast) {
@@ -231,7 +233,7 @@ export default function PhotoGrid({
     <div ref={wrapRef} className="w-full mx-auto px-6" style={{ maxWidth }}>
       <div id={gid} className="flex flex-col" style={{ gap }}>
         {!ready && (
-          <div className="text-center py-12 text-gray-500">Loading images…</div>
+          <div className="text-center py-12 text-ink/60">Loading images…</div>
         )}
 
         {laidOutRows.map((row, rIdx) => (

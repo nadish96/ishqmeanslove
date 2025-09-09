@@ -12,7 +12,7 @@ const About = () => {
                 About
               </h1>
               <div className="h-px w-12 bg-gold/60 mb-8" />
-              <div className="space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-6 text-base sm:text-lg text-ink/80 leading-relaxed">
                 <p>
                   Hi, I'm Nadish. I approach wedding photography differently—while others orchestrate moments, I believe the best shots happen when you forget I'm there.
                 </p>

@@ -21,7 +21,7 @@ export default function PortfolioCategoryPage({
             </h1>
             <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
             {description && (
-              <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-ink/80 max-w-2xl mx-auto leading-relaxed">
                 {description}
               </p>
             )}

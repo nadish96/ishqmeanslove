@@ -10,17 +10,12 @@ const PortfolioWeddingBlogs = () => {
       <div className="bg-white min-h-screen text-ink">
         <div className="max-w-6xl mx-auto px-8 py-16">
           <div className="text-center mb-16">
-            <Link
-              to="/portfolio/weddings"
-              className="inline-block text-sm tracking-wide uppercase text-gray-600 hover:text-clay transition-colors mb-8"
-            >
-              ← Back to Portfolio
-            </Link>
+            {/* Back link removed for cleaner UX; header nav provides path */}
             <h1 className="text-3xl font-heading text-gray-900 mb-2">
               Wedding Blog
             </h1>
             <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-ink/80 max-w-2xl mx-auto leading-relaxed">
               Each wedding tells a unique love story. Explore these celebrations.
             </p>
           </div>
@@ -42,10 +37,10 @@ const PortfolioWeddingBlogs = () => {
                 <h3 className="text-xl font-heading text-gray-900 group-hover:text-clay transition-colors mb-2">
                   {wedding.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-1">
+                <p className="text-ink/70 text-sm mb-1">
                   {wedding.description}
                 </p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-ink/60 text-sm">
                   {wedding.venue}
                 </p>
               </Link>

@@ -13,9 +13,7 @@ const DynamicWeddingBlog = () => {
         <div className="bg-white min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-heading text-gray-900 mb-4">Blog not found</h1>
-            <Link to="/portfolio/weddings/blogs" className="text-gray-600 hover:text-clay">
-              ← Back to Blog
-            </Link>
+            {/* Back link removed; header nav provides path */}
           </div>
         </div>
       </PageWrapper>
@@ -27,20 +25,15 @@ const DynamicWeddingBlog = () => {
       <div className="bg-white min-h-screen text-ink">
         <div className="max-w-6xl mx-auto px-8 py-16">
           <div className="text-center mb-16">
-            <Link 
-              to="/portfolio/weddings/blogs"
-              className="inline-block text-sm tracking-wide uppercase text-gray-600 hover:text-clay transition-colors mb-8"
-            >
-              ← Back to Blog
-            </Link>
+            {/* Back link removed for cleaner layout */}
             <h1 className="text-3xl font-heading text-gray-900 mb-2">
               {blog.title}
             </h1>
             <div className="h-px w-12 bg-gold/60 mx-auto mb-4" />
-            <p className="text-gray-600 mb-2">
+            <p className="text-ink/80 mb-2">
               {blog.description}
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-ink/60 text-sm">
               {blog.venue}
             </p>
           </div>

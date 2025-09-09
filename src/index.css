@@ -12,10 +12,12 @@
 body {
   margin: 0;
   background-color: #ffffff;
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
   color: #111827; /* ink */
   line-height: 1.6;
   letter-spacing: -0.005em;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures;
 }
 
 /* Minimal typography */
