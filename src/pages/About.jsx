@@ -5,25 +5,67 @@ const About = () => {
     <PageWrapper>
       <div className="bg-white min-h-screen text-ink">
         <div className="max-w-4xl mx-auto px-8 py-16">
-          <div className="grid grid-cols-1 gap-16 items-start">
-            {/* Content */}
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-heading mb-2 text-gray-900">
-                About
-              </h1>
-              <div className="h-px w-12 bg-gold/60 mb-8" />
-              <div className="space-y-6 text-base sm:text-lg text-ink/80 leading-relaxed">
-                <p>
-                  Hi, I'm Nadish. I approach wedding photography differently—while others orchestrate moments, I believe the best shots happen when you forget I'm there.
-                </p>
-                <p>
-                  This is your day, and I'm here to document every genuine emotion as it unfolds naturally. I work collaboratively with you and everyone involved to capture the authentic story of your celebration.
-                </p>
-                <p>
-                  My style is documentary-focused, emphasizing real moments over posed perfection. The result is a collection of images that feel timeless and transport you back to exactly how your wedding day felt.
-                </p>
+          {/* Artist Statement */}
+          <div className="text-center mb-10">
+            <h1 className="text-3xl sm:text-4xl font-heading mb-2 text-gray-900">Hi, I’m Nadish.</h1>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
+            <div className="max-w-2xl mx-auto text-ink/80 space-y-4">
+              <p>
+                I picked up my first camera when I was ten. The promise of a camera as the closest thing to a time machine was obvious to me — I fell in love. At Ishq Means Love, I make photographs that are honest, enduring, and a class apart in style.
+              </p>
+              <p>
+                I’m big on storytelling. Your album should let you see how the day unfolded — and feel it again.
+              </p>
+              <p>
+                I’m grateful you’re here. If you see yourself in this work, I’d be honored to tell your story.
+              </p>
+            </div>
+          </div>
+
+          {/* Essentials */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl font-heading text-gray-900 mb-2 text-center">What You Can Expect</h2>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
+            <ul className="space-y-2 text-ink/80">
+              <li><span className="font-semibold text-ink">Coverage:</span> From first look to last song — as long as your event goes on.</li>
+              <li><span className="font-semibold text-ink">Delivery:</span> A private, shareable online album delivered in <span className="font-semibold text-ink">4 weeks</span>; selected highlights delivered in <span className="font-semibold text-ink">7 days</span>.</li>
+            </ul>
+          </div>
+
+          {/* FAQs */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <h2 className="text-2xl font-heading text-gray-900 mb-2 text-center">FAQs</h2>
+            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
+            <div className="space-y-4 text-ink/80">
+              <div>
+                <p className="font-semibold text-ink">Can we see full galleries?</p>
+                <p>Yes — I share complete weddings on inquiry.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-ink">Do you travel?</p>
+                <p>Yes, nationwide.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-ink">How do you price?</p>
+                <p>Full day coverage starts at $2,500.</p>
               </div>
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <a
+              href="/contact"
+              className="inline-block px-6 py-3 text-sm tracking-wide uppercase text-white bg-clay hover:bg-clay/90 transition-colors"
+            >
+              Request a Commission
+            </a>
+            <a
+              href="/portfolio/weddings/blogs"
+              className="inline-block ml-4 px-6 py-3 text-sm tracking-wide uppercase text-clay border border-clay hover:bg-clay/10 transition-colors"
+            >
+              See Full Wedding Galleries
+            </a>
           </div>
         </div>
       </div>

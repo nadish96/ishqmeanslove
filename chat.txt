@@ -1,0 +1,38 @@
+Here’s my honest, user‑eye review plus crisp improvements.
+
+First Impression
+
+Premium shift: The wordmark + Newsreader body + clay accents feel elevated.
+Clear promise: The new intro copy is strong and personal; it sets intent fast.
+Visual focus: The curated highlights grid immediately showcases quality.
+What Works
+
+Typography: Cormorant + Newsreader reads editorial and serious.
+Grid: No-crop, lightbox, and 3‑across layout present images beautifully.
+CTA placement: Below work feels earned and not salesy.
+Footer: Now compact, clear, and tasteful.
+Friction / Misses
+
+Hero load: The hero still probes multiple images; can add initial jank and hurt LCP.
+SEO basics: Only a bare <title> is set; no meta description or OG/Twitter tags.
+Favicon: Still vite.svg; breaks the premium feel.
+Console logs: HeroImage.jsx logs to console; noisy in production.
+Alt text: PhotoGrid uses generic “Photo x-y”; misses accessibility + SEO upside.
+Link palette: Some text-gray-600 remains in nav/UI (intended), but ensure it’s a deliberate hierarchy.
+Quick Wins (I can do fast)
+
+Performance: Preload a single hero still image and defer others; keep carousel logic but only if needed.
+SEO: Add meta description + OG/Twitter tags matching the new voice.
+Favicon: Replace vite.svg with a simple I monogram or your logo.
+Cleanup: Remove console.log lines from HeroImage.jsx.
+A11y: Improve alt text on highlights (derive from filename or let you pass captions).
+Optional Polishes
+
+Full‑bleed highlights: Let the grid go edge‑to‑edge for more impact.
+Breadcrumbs on blog detail: “Weddings / Blog / {Title}” (tiny, elegant).
+Micro-copy align: Mirror the poetic tone on About and a single sentence in footer.
+If you want, I’ll:
+
+Add SEO/meta + favicon.
+Replace hero with one powerful still (faster, cleaner).
+Improve alt text strategy for PhotoGrid.
