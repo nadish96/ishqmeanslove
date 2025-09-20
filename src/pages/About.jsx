@@ -47,7 +47,10 @@ const About = () => {
               </div>
               <div>
                 <p className="font-semibold text-ink">How do you price?</p>
-                <p>Full day coverage starts at $2,500.</p>
+                <p>
+                  <a href="/contact" className="text-clay border-b border-clay hover:bg-clay/10 transition-colors">Contact</a>
+                  {" "}for pricing.
+                </p>
               </div>
             </div>
           </div>

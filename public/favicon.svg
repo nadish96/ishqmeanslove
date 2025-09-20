@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background ring (ink) for contrast -->
+  <circle cx="256" cy="256" r="256" fill="#111827" />
+  <!-- Place the PNG slightly inset so the ring is visible -->
+  <image href="/favicon.png" x="32" y="32" width="448" height="448" preserveAspectRatio="xMidYMid meet" />
+</svg>

@@ -102,37 +102,39 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Client Testimonials */}
-        <div className="max-w-4xl mx-auto px-8 pb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-heading text-gray-900 mb-2">
-              Kind Words
-            </h2>
-            <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="text-center">
-              <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4 italic">
-                "Nadish captured our day exactly as it happened—no forced poses,
-                just pure emotion. Looking at our photos feels like reliving
-                every perfect moment."
-              </p>
-              <p className="text-xs sm:text-sm text-ink/60 uppercase tracking-wide">
-                — Sarah & Mike
-              </p>
+        {/* Client Testimonials (hidden) */}
+        {false && (
+          <div className="max-w-4xl mx-auto px-8 pb-24">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-heading text-gray-900 mb-2">
+                Kind Words
+              </h2>
+              <div className="h-px w-12 bg-gold/60 mx-auto mb-6" />
             </div>
-            <div className="text-center">
-              <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4 italic">
-                "We barely noticed Nadish was there, but somehow he caught every
-                meaningful glance and genuine smile. These photos tell our story
-                better than we ever could."
-              </p>
-              <p className="text-xs sm:text-sm text-ink/60 uppercase tracking-wide">
-                — Priya & James
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="text-center">
+                <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4 italic">
+                  "Nadish captured our day exactly as it happened—no forced poses,
+                  just pure emotion. Looking at our photos feels like reliving
+                  every perfect moment."
+                </p>
+                <p className="text-xs sm:text-sm text-ink/60 uppercase tracking-wide">
+                  — Sarah & Mike
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-base sm:text-lg text-ink/80 leading-relaxed mb-4 italic">
+                  "We barely noticed Nadish was there, but somehow he caught every
+                  meaningful glance and genuine smile. These photos tell our story
+                  better than we ever could."
+                </p>
+                <p className="text-xs sm:text-sm text-ink/60 uppercase tracking-wide">
+                  — Priya & James
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </PageWrapper>
   );
